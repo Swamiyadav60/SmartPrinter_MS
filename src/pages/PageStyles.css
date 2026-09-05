@@ -1,0 +1,81 @@
+/* ── Shared Page Styles ── */
+.page-hero {
+  padding: var(--space-20) 0 var(--space-16);
+  background-color: var(--color-navy);
+}
+
+.page-hero--soft {
+  background: linear-gradient(160deg, #f8fafc 0%, var(--color-blue-soft) 100%);
+}
+
+.page-hero__content {
+  max-width: 680px;
+}
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-bottom: var(--space-5);
+  margin-top: var(--space-3);
+}
+
+.page-hero__title--white {
+  color: var(--color-white);
+}
+
+.page-hero__sub {
+  font-size: 1.0625rem;
+  color: var(--color-gray-600);
+  line-height: 1.75;
+}
+
+.page-hero__sub--muted {
+  color: var(--color-gray-400);
+}
+
+/* ── How It Works Detail ── */
+.hiw-detail {
+  padding: var(--space-16) 0;
+  background: var(--color-gray-50);
+}
+
+.hiw-detail__inner h2 {
+  margin-bottom: var(--space-8);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.hiw-detail__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+.hiw-detail__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+}
+
+.hiw-detail__card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--space-3);
+}
+
+.hiw-detail__card p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .hiw-detail__grid {
+    grid-template-columns: 1fr;
+  }
+}

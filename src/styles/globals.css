@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   PrintGo — Global Design System v2 (Premium Tech)
+   ============================================================ */
+
+:root {
+  /* Brand Colors */
+  --color-navy:        #0B1220;
+  --color-navy-800:    #121b2d;
+  --color-navy-700:    #16233b;
+  --color-blue:        #2563EB;
+  --color-blue-600:    #1d4ed8;
+  --color-blue-soft:   #EFF6FF;
+  --color-blue-soft2:  #e0f2fe;
+  --color-white:       #FFFFFF;
+  --color-gray-50:     #F8FAFC;
+  --color-gray-100:    #F1F5F9;
+  --color-gray-200:    #E2E8F0;
+  --color-gray-300:    #CBD5E1;
+  --color-gray-400:    #94A3B8;
+  --color-gray-500:    #64748B;
+  --color-gray-600:    #475569;
+  --color-text:        #0f172a;
+  --color-text-muted:  #475569;
+
+  /* Typography */
+  --font-primary:   'Inter', system-ui, -apple-system, sans-serif;
+  --font-display:   'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Radius */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows - Softer, more premium */
+  --shadow-sm: 0 1px 2px rgba(11, 18, 32, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(11, 18, 32, 0.06), 0 2px 4px -2px rgba(11, 18, 32, 0.03);
+  --shadow-lg: 0 12px 24px -4px rgba(11, 18, 32, 0.08), 0 4px 8px -4px rgba(11, 18, 32, 0.04);
+  --shadow-xl: 0 24px 48px -12px rgba(11, 18, 32, 0.12);
+  --shadow-blue: 0 8px 24px -8px rgba(37, 99, 235, 0.4);
+
+  /* Transitions */
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Container */
+  --container-max:  1280px;
+  --container-pad:  1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-navy);
+  letter-spacing: -0.03em;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; }
+h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+p  { color: var(--color-text-muted); font-size: 1.0625rem; }
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.section { padding: var(--space-24) 0; }
+.section--dark { background-color: var(--color-navy); color: var(--color-white); }
+.section--dark h1, .section--dark h2, .section--dark h3 { color: var(--color-white); }
+.section--dark p { color: var(--color-gray-400); }
+.section--soft { background-color: var(--color-gray-50); }
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-blue);
+  margin-bottom: var(--space-4);
+}
+.section-label--white { color: var(--color-blue-soft); }
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-16);
+}
+.section-header h2 { margin-bottom: var(--space-4); }
+.section-header p { font-size: 1.25rem; line-height: 1.6; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+@media (max-width: 768px) {
+  .section { padding: var(--space-16) 0; }
+  .section-header { margin-bottom: var(--space-10); }
+  p { font-size: 1rem; }
+}
+
+/* Accessibility & Focus States */
+:focus {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

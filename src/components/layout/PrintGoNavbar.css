@@ -1,0 +1,305 @@
+﻿/* ============================================================
+   PrintGoNavbar — Theme overrides + layout
+   All rules scoped to .printgo-nav-wrapper so they
+   cannot leak into the rest of the page.
+   Do NOT edit the generated unframer files — add overrides here.
+   ============================================================ */
+
+/* ── CSS Variables bridged from globals.css ─────────────────── */
+.printgo-nav-wrapper {
+  /* Semantic aliases used throughout this file */
+  --sp-bg:          var(--color-white, #ffffff);
+  --sp-bg-blur:     rgba(255, 255, 255, 0.88);
+  --sp-bg-scrolled: rgba(255, 255, 255, 0.97);
+  --sp-border:      var(--color-gray-200, #e2e8f0);
+  --sp-text:        var(--color-navy, #0b1220);
+  --sp-text-muted:  var(--color-gray-600, #475569);
+  --sp-accent:      var(--color-blue, #2563eb);
+  --sp-accent-soft: var(--color-blue-soft, #eff6ff);
+  --sp-shadow-card: 0 8px 32px -8px rgba(11, 18, 32, 0.12), 0 2px 8px -4px rgba(11, 18, 32, 0.06);
+  --sp-shadow-scrolled: 0 2px 8px rgba(11, 18, 32, 0.08);
+  --sp-radius-card: var(--radius-2xl, 32px);
+  --sp-radius-pill: var(--radius-full, 9999px);
+}
+
+/* ── Outer wrapper ───────────────────────────────────────────── */
+.printgo-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  /* Padding so the floating card doesn't touch the viewport edge */
+  padding: 12px 16px 0;
+  pointer-events: none; /* let clicks through wrapper; restored on card */
+}
+
+/* ── Header element ──────────────────────────────────────────── */
+.spnav {
+  pointer-events: none;
+}
+
+/* ── Floating card (default variant) ────────────────────────── */
+.spnav__card {
+  pointer-events: auto;
+  background-color: var(--sp-bg-blur);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--sp-border);
+  border-radius: var(--sp-radius-card);
+  box-shadow: var(--sp-shadow-card);
+  transition:
+    background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow       300ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spnav--scrolled .spnav__card {
+  background-color: var(--sp-bg-scrolled);
+  box-shadow: var(--sp-shadow-scrolled);
+}
+
+/* Sticky variant: full-width bar instead of pill card */
+.spnav--sticky .printgo-nav-wrapper {
+  padding: 0;
+}
+.spnav--sticky .spnav__card {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  max-width: none;
+}
+
+/* ── Inner row ───────────────────────────────────────────────── */
+.spnav__inner {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 20px;
+  gap: 8px;
+}
+
+/* ── Logo ────────────────────────────────────────────────────── */
+.spnav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.spnav__logo-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.spnav__logo-text {
+  font-family: var(--font-display, "Manrope", system-ui, sans-serif);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--sp-text);
+  letter-spacing: -0.03em;
+}
+
+.spnav__logo-accent {
+  color: var(--sp-accent);
+}
+
+/* ── Desktop nav links ───────────────────────────────────────── */
+.spnav__nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.spnav__links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pill-style nav item — matches Framer Navbar aesthetic */
+.spnav__link {
+  display: block;
+  padding: 7px 14px;
+  font-family: var(--font-primary, "Inter", system-ui, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--sp-text-muted);
+  border-radius: var(--sp-radius-pill);
+  text-decoration: none;
+  transition:
+    color            150ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.spnav__link:hover {
+  color: var(--sp-text);
+  background-color: var(--color-gray-100, #f1f5f9);
+}
+
+/* Active pill — filled with soft blue */
+.spnav__link--active {
+  color: var(--sp-accent);
+  background-color: var(--sp-accent-soft);
+  font-weight: 600;
+}
+
+.spnav__link--active:hover {
+  background-color: var(--sp-accent-soft);
+}
+
+/* ── CTA buttons ─────────────────────────────────────────────── */
+.spnav__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Hamburger ───────────────────────────────────────────────── */
+.spnav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.spnav__hamburger:hover {
+  background-color: var(--color-gray-100, #f1f5f9);
+}
+
+.spnav__bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--sp-text);
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+/* ── Mobile drawer ───────────────────────────────────────────── */
+.spnav__drawer {
+  border-top: 1px solid var(--sp-border);
+  background-color: var(--sp-bg);
+  overflow: hidden;
+}
+
+.spnav__drawer-links {
+  padding: 12px 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+}
+
+.spnav__drawer-link {
+  display: block;
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--sp-text-muted);
+  border-radius: var(--radius-md, 10px);
+  text-decoration: none;
+  transition:
+    color            150ms ease,
+    background-color 150ms ease;
+}
+
+.spnav__drawer-link:hover {
+  color: var(--sp-text);
+  background-color: var(--color-gray-100, #f1f5f9);
+}
+
+.spnav__drawer-link--active {
+  color: var(--sp-accent);
+  background-color: var(--sp-accent-soft);
+  font-weight: 600;
+}
+
+.spnav__drawer-actions {
+  padding: 12px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--color-gray-100, #f1f5f9);
+}
+
+/* ── Overrides for any framer-* classes (unframer future use) ── */
+/*
+  If you later wire in a real unframer component, scope all color
+  overrides here using [class*="framer-"]:
+*/
+.printgo-nav-wrapper [class*="framer-"] {
+  background-color: var(--sp-bg) !important;
+  color:            var(--sp-text) !important;
+}
+
+/* framer "card" sub-component */
+.printgo-nav-wrapper [class*="framer-"][class*="card"],
+.printgo-nav-wrapper [class*="framer-"][class*="container"] {
+  background-color: var(--sp-bg-blur) !important;
+  backdrop-filter: blur(20px) !important;
+  border-color: var(--sp-border) !important;
+}
+
+/* framer toggle / hamburger sub-component */
+.printgo-nav-wrapper [class*="framer-"][class*="toggle"],
+.printgo-nav-wrapper [class*="framer-"][class*="hamburger"],
+.printgo-nav-wrapper [class*="framer-"][class*="menu-button"] {
+  color: var(--sp-text) !important;
+}
+
+/* framer menu item pill sub-component */
+.printgo-nav-wrapper [class*="framer-"][class*="item"],
+.printgo-nav-wrapper [class*="framer-"][class*="link"],
+.printgo-nav-wrapper [class*="framer-"][class*="pill"] {
+  color: var(--sp-text-muted) !important;
+  background-color: transparent !important;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .printgo-nav-wrapper {
+    padding: 10px 12px 0;
+  }
+
+  .spnav__nav,
+  .spnav__actions {
+    display: none;
+  }
+
+  .spnav__hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .printgo-nav-wrapper {
+    padding: 8px 8px 0;
+  }
+
+  .spnav__inner {
+    height: 56px;
+    padding: 0 14px;
+  }
+}

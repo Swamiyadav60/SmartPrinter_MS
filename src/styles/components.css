@@ -1,0 +1,82 @@
+/* ── Premium Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--radius-full);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-color: var(--color-navy);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-navy-800);
+  border-color: var(--color-navy-800);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-navy);
+  border-color: var(--color-gray-300);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-navy);
+  transform: translateY(-2px);
+}
+
+.btn--accent {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-color: var(--color-blue);
+  box-shadow: var(--shadow-blue);
+}
+
+.btn--accent:hover {
+  background-color: var(--color-blue-600);
+  box-shadow: 0 12px 28px -8px rgba(37, 99, 235, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.btn--ghost:hover {
+  background-color: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,1);
+  transform: translateY(-2px);
+}
+
+.btn--sm { padding: 0.625rem 1.25rem; font-size: 0.875rem; }
+.btn--lg { padding: 1.125rem 2.25rem; font-size: 1rem; }
+.btn--full { width: 100%; }
+
+.btn__icon {
+  width: 1.2em;
+  height: 1.2em;
+  transition: transform var(--transition-fast);
+}
+.btn:hover .btn__icon {
+  transform: translateX(2px);
+}

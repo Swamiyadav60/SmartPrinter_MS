@@ -1,0 +1,178 @@
+/* ── Franchise Page ── */
+.franchise-hero {
+  padding: var(--space-20) 0 var(--space-16);
+  background: linear-gradient(135deg, #0B1220 0%, #111827 60%, #1a2540 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.franchise-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle at center right, rgba(37,99,235,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.franchise-hero__content {
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
+}
+
+.franchise-hero__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1.15;
+  margin-bottom: var(--space-5);
+  margin-top: var(--space-3);
+  letter-spacing: -0.02em;
+}
+
+.franchise-hero__sub {
+  font-size: 1.125rem;
+  color: var(--color-gray-400);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+.franchise-hero__ctas {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Why Section */
+.franchise-why {
+  padding: var(--space-20) 0;
+  background: var(--color-gray-50);
+}
+
+.franchise-why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.franchise-why__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.franchise-why__card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.franchise-why__icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-4);
+}
+
+.franchise-why__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--space-3);
+}
+
+.franchise-why__desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Who Section */
+.franchise-who {
+  padding: var(--space-20) 0;
+  background: var(--color-navy);
+}
+
+.franchise-who__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.franchise-who__card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.franchise-who__card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+.franchise-who__card-desc {
+  font-size: 0.9rem;
+  color: var(--color-gray-400);
+  line-height: 1.6;
+}
+
+/* Terms Note */
+.franchise-terms {
+  padding: var(--space-16) 0;
+  background: var(--color-white);
+}
+
+.franchise-terms__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10);
+}
+
+.franchise-terms__icon {
+  display: flex;
+  justify-content: center;
+  color: var(--color-gray-400);
+  margin-bottom: var(--space-5);
+}
+
+.franchise-terms__inner h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--space-4);
+}
+
+.franchise-terms__inner p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .franchise-why__grid,
+  .franchise-who__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .franchise-why__grid,
+  .franchise-who__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .franchise-hero__ctas {
+    flex-direction: column;
+  }
+}
