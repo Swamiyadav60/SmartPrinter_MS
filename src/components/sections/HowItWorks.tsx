@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import imgUpload1 from '../../assets/Printgo_how-it-works_upload-1.png';
+import imgUpload3 from '../../assets/Printgo_how-it-works_upload-3.png';
+import imgChoose from '../../assets/Printgo_how-it-works_choose.png';
+import imgCollect from '../../assets/Printgo_how-it-works_collect.png';
 
 // IMPORTANT: All Tailwind classes used in the `image` field must be complete static strings
 // (no template interpolation) so the Tailwind content scanner can detect them at build time.
@@ -10,7 +14,7 @@ const steps = [
     desc: 'Scan the QR code displayed on the SmartPrinter kiosk with your phone to open the SmartPrinter web app. No app installation required.',
     image: 'bg-gradient-to-br from-blue-500/20 to-purple-500/20',
     glowColor: 'rgba(59,130,246,0.12)',
-    imgSrc: '/src/assets/Printgo_how-it-wprks_upload-1.png',
+    imgSrc: imgUpload1,
   },
   {
     num: '02',
@@ -18,7 +22,7 @@ const steps = [
     desc: 'Upload your PDF or DOC file directly from your phone or laptop. Your document is securely sent to the selected kiosk.',
     image: 'bg-gradient-to-br from-green-500/20 to-blue-500/20',
     glowColor: 'rgba(34,197,94,0.12)',
-    imgSrc: '/src/assets/Printgo_how-it-works_upload-3.png',
+    imgSrc: imgUpload3,
   },
   {
     num: '03',
@@ -26,7 +30,7 @@ const steps = [
     desc: 'Select your print preferences, check your order, and pay securely online.',
     image: 'bg-gradient-to-br from-yellow-500/20 to-red-500/20',
     glowColor: 'rgba(234,179,8,0.12)',
-    imgSrc: '/src/assets/Printgo_how-it-works_choose.png',
+    imgSrc: imgChoose,
   },
   {
     num: '04',
@@ -34,7 +38,7 @@ const steps = [
     desc: 'Your document prints in seconds — no queue, no waiting on staff.',
     image: 'bg-gradient-to-br from-pink-500/20 to-orange-500/20',
     glowColor: 'rgba(236,72,153,0.12)',
-    imgSrc: '/src/assets/Printgo_how-it-works_collect.png',
+    imgSrc: imgCollect,
   },
 ];
 
