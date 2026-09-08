@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Actions */}
         <div className="navbar__actions">
           <Button
-            href="https://print.smartprinter.in"
+            href="https://app.printgo.co.in"
             variant="secondary"
             size="sm"
             id="nav-print-now"

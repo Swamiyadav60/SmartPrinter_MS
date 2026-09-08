@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
 
           <div className="hero__utility reveal reveal-delay-3">
             <p>End user looking to print a document?</p>
-            <a href="https://app.print.co.in" target="_blank" rel="noopener noreferrer" className="hero__utility-link">
+            <a href="https://app.printgo.co.in" target="_blank" rel="noopener noreferrer" className="hero__utility-link">
               Go to Printing Web App ↗
             </a>
           </div>
