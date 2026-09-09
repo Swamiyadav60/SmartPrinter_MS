@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
           </ul>
           <div className="navbar__mobile-actions">
             <Button
-              href="https://print.smartprinter.in"
+              href="https://printgo.co.in"
               variant="secondary"
               fullWidth
               id="mobile-print-now"
