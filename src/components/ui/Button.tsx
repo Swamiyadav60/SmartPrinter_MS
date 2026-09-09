@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <a href={href} className={cls} target="_blank" rel="noopener noreferrer" id={id} aria-label={ariaLabel}>
+      <a href={href} className={cls} target="_self" rel="noopener noreferrer" id={id} aria-label={ariaLabel}>
         {children}
       </a>
     );
