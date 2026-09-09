@@ -11,7 +11,7 @@ const steps = [
   {
     num: '01',
     title: 'Scan the Kiosk QR Code',
-    desc: 'Scan the QR code displayed on the SmartPrinter kiosk with your phone to open the SmartPrinter web app. No app installation required.',
+    desc: 'Scan the QR code displayed on the PrintGo kiosk with your phone to open the PrintGo web app. No app installation required.',
     image: 'bg-gradient-to-br from-blue-500/20 to-purple-500/20',
     glowColor: 'rgba(59,130,246,0.12)',
     imgSrc: imgUpload1,

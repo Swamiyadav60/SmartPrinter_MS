@@ -29,10 +29,10 @@ const ContactPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus('submitting');
-    
+
     // Prepared for Supabase integration here
     // e.g., await supabase.from('quotes').insert([formData]);
-    
+
     // Simulate network request
     setTimeout(() => {
       setFormStatus('success');
@@ -46,7 +46,7 @@ const ContactPage: React.FC = () => {
     <>
       <section className="contact-page" ref={ref} aria-labelledby="contact-headline">
         <div className="container contact-page__container">
-          
+
           {/* Left: Info */}
           <div className="contact-page__info reveal">
             <span className="section-label">Get in Touch</span>
@@ -65,7 +65,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <strong>Email us</strong>
-                  <span>hello@smartprinter.in</span>
+                  <span>hello@printgo.co.in</span>
                 </div>
               </div>
               <div className="contact-page__method">
@@ -112,7 +112,7 @@ const ContactPage: React.FC = () => {
             ) : (
               <form className="contact-page__form" onSubmit={handleSubmit} noValidate>
                 <h2 className="contact-page__form-title">Get a Quote</h2>
-                
+
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="name">Full Name <span aria-hidden="true">*</span></label>
@@ -160,10 +160,10 @@ const ContactPage: React.FC = () => {
                   <textarea id="message" rows={4} placeholder="Tell us about your location and requirements..." value={formData.message} onChange={handleChange}></textarea>
                 </div>
 
-                <Button 
-                  type="submit" 
-                  variant="primary" 
-                  fullWidth 
+                <Button
+                  type="submit"
+                  variant="primary"
+                  fullWidth
                   size="lg"
                   disabled={formStatus === 'submitting'}
                   aria-busy={formStatus === 'submitting'}
