@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'How does the printing process work?',
-    a: 'Scan the QR code on the kiosk → visit print.smartprinter.in → select your kiosk → upload your document → choose print settings → pay online → collect your printout. The entire process typically takes just a few minutes.',
+    a: 'Scan the QR code on the kiosk → visit app.printgo.co.in → select your kiosk → upload your document → choose print settings → pay online → collect your printout. The entire process typically takes just a few minutes.',
   },
   {
     q: 'Is my document safe and private?',

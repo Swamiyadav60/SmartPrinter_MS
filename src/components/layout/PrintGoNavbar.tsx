@@ -50,16 +50,16 @@ export interface PrintGoNavbarProps {
 // --- Defaults -----------------------------------------------------------------
 
 const DEFAULT_NAV_LINKS: NavLinkItem[] = [
-  { to: "/",             label: "Home" },
-  { to: "/features",     label: "Features" },
+  { to: "/", label: "Home" },
+  { to: "/features", label: "Features" },
   { to: "/how-it-works", label: "How It Works" },
-  { to: "/franchise",    label: "Franchise" },
-  { to: "/contact",      label: "Contact" },
+  { to: "/franchise", label: "Franchise" },
+  { to: "/contact", label: "Contact" },
 ];
 
 const DEFAULT_CTA_LINKS: CtaItem[] = [
-  { label: "Print Now",   href: "https://print.smartprinter.in", variant: "secondary" },
-  { label: "Get a Quote", to:   "/contact",                       variant: "primary"   },
+  { label: "Print Now", href: "https://app.printgo.co.in", variant: "secondary" },
+  { label: "Get a Quote", to: "/contact", variant: "primary" },
 ];
 
 // --- Animation variants -------------------------------------------------------
@@ -87,16 +87,16 @@ const itemVariants = {
 };
 
 const barTop = {
-  closed: { rotate: 0,   y: 0,  transition: { duration: 0.22 } },
-  open:   { rotate: 45,  y: 7,  transition: { duration: 0.22 } },
+  closed: { rotate: 0, y: 0, transition: { duration: 0.22 } },
+  open: { rotate: 45, y: 7, transition: { duration: 0.22 } },
 };
 const barMid = {
   closed: { opacity: 1, transition: { duration: 0.1 } },
-  open:   { opacity: 0, transition: { duration: 0.1 } },
+  open: { opacity: 0, transition: { duration: 0.1 } },
 };
 const barBot = {
-  closed: { rotate: 0,   y: 0,  transition: { duration: 0.22 } },
-  open:   { rotate: -45, y: -7, transition: { duration: 0.22 } },
+  closed: { rotate: 0, y: 0, transition: { duration: 0.22 } },
+  open: { rotate: -45, y: -7, transition: { duration: 0.22 } },
 };
 
 // --- Logo ----------------------------------------------------------------------
@@ -138,10 +138,10 @@ const CtaRow: React.FC<{ items: CtaItem[]; className?: string }> = ({ items, cla
 const PrintGoNavbar: React.FC<PrintGoNavbarProps> = ({
   navLinks = DEFAULT_NAV_LINKS,
   ctaLinks = DEFAULT_CTA_LINKS,
-  variant  = "floating",
+  variant = "floating",
 }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled,   setScrolled]   = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { scrollY } = useScroll();
 
@@ -149,7 +149,7 @@ const PrintGoNavbar: React.FC<PrintGoNavbarProps> = ({
 
   useEffect(() => { setMobileOpen(false); }, [location.pathname]);
 
-  const menuState  = mobileOpen ? "open" : "closed";
+  const menuState = mobileOpen ? "open" : "closed";
   const isFloating = variant === "floating";
 
   return (

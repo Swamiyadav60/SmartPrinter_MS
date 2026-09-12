@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
           <ul className="footer__links footer__links--contact" role="list">
             <li>
               <span className="footer__contact-label">Website</span>
-              <span>smartprinter.in</span>
+              <span>printgo.co.in</span>
             </li>
             <li>
               <span className="footer__contact-label">Printing App</span>
