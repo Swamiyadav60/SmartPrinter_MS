@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../ui/Button';
+import printgoLogo from '../../assets/PrintGo_logo.jpeg';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -21,14 +22,11 @@ const Footer: React.FC = () => {
         <div className="footer__brand">
           <Link to="/" className="footer__logo" aria-label="PrintGo Home">
             <span className="footer__logo-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="8" fill="#2563EB" />
-                <rect x="7" y="10" width="18" height="13" rx="2.5" fill="white" opacity="0.95" />
-                <rect x="10" y="14" width="12" height="1.8" rx="0.9" fill="#2563EB" />
-                <rect x="10" y="17.2" width="8" height="1.8" rx="0.9" fill="#2563EB" />
-                <circle cx="23" cy="11" r="3.5" fill="#0B1220" />
-                <circle cx="23" cy="11" r="1.8" fill="#2563EB" />
-              </svg>
+              <img
+                src={printgoLogo}
+                alt="PrintGo"
+                className="footer__logo-img"
+              />
             </span>
             <span className="footer__logo-text">Print<span className="footer__logo-accent">Go</span></span>
           </Link>

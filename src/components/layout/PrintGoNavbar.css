@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    PrintGoNavbar — Theme overrides + layout
    All rules scoped to .printgo-nav-wrapper so they
    cannot leak into the rest of the page.
@@ -96,6 +96,24 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
+}
+
+.spnav__logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+  display: block;
+}
+
+.spnav__logo:hover .spnav__logo-img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
 }
 
 .spnav__logo-text {
@@ -301,5 +319,23 @@
   .spnav__inner {
     height: 56px;
     padding: 0 14px;
+  }
+
+  .spnav__logo-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+  }
+}
+
+@media (max-width: 380px) {
+  .spnav__logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .spnav__logo-text {
+    font-size: 1rem;
   }
 }
