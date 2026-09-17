@@ -6,7 +6,6 @@ import Solution from '../components/sections/Solution';
 import HowItWorks from '../components/sections/HowItWorks';
 import Features from '../components/sections/Features';
 import Security from '../components/sections/Security';
-import ProductShowcase from '../components/sections/ProductShowcase';
 import Solutions from '../components/sections/Solutions';
 import FranchiseTeaser from '../components/sections/FranchiseTeaser';
 import Vision from '../components/sections/Vision';
@@ -27,7 +26,6 @@ const HomePage: React.FC = () => {
       <HowItWorks />
       <Features />
       <Security />
-      <ProductShowcase />
       <Solutions />
       <FranchiseTeaser />
       <Vision />

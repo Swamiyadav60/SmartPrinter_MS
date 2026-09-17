@@ -1,45 +1,170 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../components/ui/Button';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { supabase } from '../lib/supabase';
 import './PageStyles.css';
 import './ContactPage.css';
+
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  location: string;
+  kioskCount: string;
+  kioskType: string;
+  message: string;
+}
+
+const initialFormData: FormData = {
+  name: '',
+  phone: '',
+  email: '',
+  location: '',
+  kioskCount: '1',
+  kioskType: 'unsure',
+  message: '',
+};
 
 const ContactPage: React.FC = () => {
   const ref = useScrollReveal();
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    location: '',
-    kioskCount: '1',
-    kioskType: 'unsure',
-    message: ''
-  });
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     document.title = 'Contact & Quote — PrintGo';
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { id, value } = e.target;
     setFormData(prev => ({ ...prev, [id]: value }));
+    if (errors[id]) {
+      setErrors(prev => {
+        const next = { ...prev };
+        delete next[id];
+        return next;
+      });
+    }
+    if (errorMessage) {
+      setErrorMessage(null);
+    }
+  };
+
+  const validate = (): boolean => {
+    const newErrors: Record<string, string> = {};
+
+    const trimmedName = formData.name.trim();
+    if (!trimmedName) {
+      newErrors.name = 'Full name is required.';
+    } else if (trimmedName.length > 200) {
+      newErrors.name = 'Full name must be 200 characters or fewer.';
+    }
+
+    const trimmedPhone = formData.phone.trim();
+    if (!trimmedPhone) {
+      newErrors.phone = 'Phone number is required.';
+    } else if (trimmedPhone.length < 6 || trimmedPhone.length > 20) {
+      newErrors.phone = 'Phone number must be between 6 and 20 characters.';
+    }
+
+    const trimmedEmail = formData.email.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!trimmedEmail) {
+      newErrors.email = 'Email address is required.';
+    } else if (!emailRegex.test(trimmedEmail)) {
+      newErrors.email = 'Please enter a valid email address (e.g. user@domain.com).';
+    }
+
+    const trimmedLocation = formData.location.trim();
+    if (!trimmedLocation) {
+      newErrors.location = 'City / State is required.';
+    } else if (trimmedLocation.length > 200) {
+      newErrors.location = 'City / State must be 200 characters or fewer.';
+    }
+
+    if (formData.message && formData.message.length > 2000) {
+      newErrors.message = 'Message must be 2000 characters or fewer.';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const parseKiosks = (val: string): number | null => {
+    if (!val || val.trim() === '') return null;
+    const parsed = parseInt(val, 10);
+    return !isNaN(parsed) && parsed >= 0 ? parsed : null;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (formStatus === 'submitting') return;
+
+    setErrorMessage(null);
+
+    // Client-side validation on required fields
+    if (!validate()) {
+      return;
+    }
+
     setFormStatus('submitting');
 
-    // Prepared for Supabase integration here
-    // e.g., await supabase.from('quotes').insert([formData]);
+    try {
+      const fullName = formData.name.trim();
+      const phone = formData.phone.trim();
+      const email = formData.email.trim();
+      const cityState = formData.location.trim();
+      const numberOfKiosks = parseKiosks(formData.kioskCount);
+      const enquiryType: 'kiosk' | 'franchise' =
+        formData.kioskType.toLowerCase().includes('franchise') ? 'franchise' : 'kiosk';
 
-    // Simulate network request
-    setTimeout(() => {
+      let messageContent = formData.message.trim();
+      if (formData.kioskType === 'bw') {
+        messageContent = messageContent ? `${messageContent} [Preferred Type: B&W Only]` : '[Preferred Type: B&W Only]';
+      } else if (formData.kioskType === 'color') {
+        messageContent = messageContent ? `${messageContent} [Preferred Type: B&W + Colour]` : '[Preferred Type: B&W + Colour]';
+      }
+      if (formData.kioskCount && ['2-5', '5-10', '10+'].includes(formData.kioskCount)) {
+        messageContent = messageContent ? `${messageContent} [Kiosks: ${formData.kioskCount}]` : `[Kiosks: ${formData.kioskCount}]`;
+      }
+      const message = messageContent ? messageContent.slice(0, 2000) : null;
+
+      const { error } = await supabase
+        .from('quote_requests')
+        .insert({
+          full_name: fullName,
+          phone: phone,
+          email: email,
+          city_state: cityState,
+          number_of_kiosks: numberOfKiosks || null,
+          enquiry_type: enquiryType,
+          message: message || null,
+        });
+
+      if (error) {
+        if (import.meta.env.DEV) {
+          console.error('[Supabase Quote Request Error]:', error.message || error);
+        }
+        setErrorMessage('Something went wrong submitting your request. Please try again.');
+        setFormStatus('idle');
+        return;
+      }
+
       setFormStatus('success');
-      setFormData({
-        name: '', phone: '', email: '', location: '', kioskCount: '1', kioskType: 'unsure', message: ''
-      });
-    }, 1500);
+      setFormData(initialFormData);
+      setErrors({});
+      setErrorMessage(null);
+    } catch (err: unknown) {
+      if (import.meta.env.DEV) {
+        console.error('[Quote Request Unexpected Error]:', err);
+      }
+      setErrorMessage('Something went wrong submitting your request. Please try again.');
+      setFormStatus('idle');
+    }
   };
 
   return (
@@ -104,7 +229,7 @@ const ContactPage: React.FC = () => {
                   </svg>
                 </div>
                 <h3>Request Received</h3>
-                <p>Thank you for your interest in PrintGo. Our team will review your requirements and get back to you shortly.</p>
+                <p>Thank you! Your request has been submitted successfully. Our team will contact you soon.</p>
                 <Button onClick={() => setFormStatus('idle')} variant="secondary">
                   Send another request
                 </Button>
@@ -113,25 +238,75 @@ const ContactPage: React.FC = () => {
               <form className="contact-page__form" onSubmit={handleSubmit} noValidate>
                 <h2 className="contact-page__form-title">Get a Quote</h2>
 
+                {errorMessage && (
+                  <div className="contact-page__error-banner" role="alert" aria-live="assertive">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="name">Full Name <span aria-hidden="true">*</span></label>
-                    <input type="text" id="name" required placeholder="John Doe" value={formData.name} onChange={handleChange} aria-required="true" />
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      placeholder="John Doe"
+                      value={formData.name}
+                      onChange={handleChange}
+                      aria-required="true"
+                      className={errors.name ? 'input--error' : ''}
+                      aria-invalid={errors.name ? 'true' : 'false'}
+                    />
+                    {errors.name && <span className="form-error" role="alert">{errors.name}</span>}
                   </div>
                   <div className="form-group">
                     <label htmlFor="phone">Phone Number <span aria-hidden="true">*</span></label>
-                    <input type="tel" id="phone" required placeholder="+91" value={formData.phone} onChange={handleChange} aria-required="true" />
+                    <input
+                      type="tel"
+                      id="phone"
+                      required
+                      placeholder="+91"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      aria-required="true"
+                      className={errors.phone ? 'input--error' : ''}
+                      aria-invalid={errors.phone ? 'true' : 'false'}
+                    />
+                    {errors.phone && <span className="form-error" role="alert">{errors.phone}</span>}
                   </div>
                 </div>
 
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="email">Email Address <span aria-hidden="true">*</span></label>
-                    <input type="email" id="email" required placeholder="john@example.com" value={formData.email} onChange={handleChange} aria-required="true" />
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      aria-required="true"
+                      className={errors.email ? 'input--error' : ''}
+                      aria-invalid={errors.email ? 'true' : 'false'}
+                    />
+                    {errors.email && <span className="form-error" role="alert">{errors.email}</span>}
                   </div>
                   <div className="form-group">
                     <label htmlFor="location">City / State <span aria-hidden="true">*</span></label>
-                    <input type="text" id="location" required placeholder="Hyderabad, TS" value={formData.location} onChange={handleChange} aria-required="true" />
+                    <input
+                      type="text"
+                      id="location"
+                      required
+                      placeholder="Hyderabad, TS"
+                      value={formData.location}
+                      onChange={handleChange}
+                      aria-required="true"
+                      className={errors.location ? 'input--error' : ''}
+                      aria-invalid={errors.location ? 'true' : 'false'}
+                    />
+                    {errors.location && <span className="form-error" role="alert">{errors.location}</span>}
                   </div>
                 </div>
 
@@ -157,7 +332,16 @@ const ContactPage: React.FC = () => {
 
                 <div className="form-group">
                   <label htmlFor="message">Additional Message (Optional)</label>
-                  <textarea id="message" rows={4} placeholder="Tell us about your location and requirements..." value={formData.message} onChange={handleChange}></textarea>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    placeholder="Tell us about your location and requirements..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    className={errors.message ? 'input--error' : ''}
+                    aria-invalid={errors.message ? 'true' : 'false'}
+                  ></textarea>
+                  {errors.message && <span className="form-error" role="alert">{errors.message}</span>}
                 </div>
 
                 <Button
@@ -168,7 +352,7 @@ const ContactPage: React.FC = () => {
                   disabled={formStatus === 'submitting'}
                   aria-busy={formStatus === 'submitting'}
                 >
-                  {formStatus === 'submitting' ? 'Sending...' : 'Request Quote'}
+                  {formStatus === 'submitting' ? 'Submitting...' : 'Request Quote'}
                 </Button>
               </form>
             )}

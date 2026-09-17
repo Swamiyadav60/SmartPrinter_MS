@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Features from '../components/sections/Features';
 import Security from '../components/sections/Security';
 import HowItWorks from '../components/sections/HowItWorks';
-import ProductShowcase from '../components/sections/ProductShowcase';
 import FinalCTA from '../components/sections/FinalCTA';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import './PageStyles.css';
@@ -32,7 +31,6 @@ const FeaturesPage: React.FC = () => {
       <Features />
       <Security />
       <HowItWorks />
-      <ProductShowcase />
       <FinalCTA />
     </>
   );
