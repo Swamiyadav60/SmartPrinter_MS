@@ -190,7 +190,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <strong>Email us</strong>
-                  <span>hello@printgo.co.in</span>
+                  <span>printgoteam@gmail.com</span>
                 </div>
               </div>
               <div className="contact-page__method">
@@ -201,7 +201,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <strong>Call us</strong>
-                  <span>+91 98765 43210</span>
+                  <span>+91 7075759202</span>
                 </div>
               </div>
               <div className="contact-page__method">

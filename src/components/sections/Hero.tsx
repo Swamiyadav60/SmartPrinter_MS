@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
         <div className="hero__content">
           <div className="hero__badge reveal">
             <span className="hero__badge-dot" aria-hidden="true" />
-            <span className="hero__badge-text">Active network in Hyderabad</span>
+            <span className="hero__badge-text">Active network in India</span>
           </div>
 
           <h1 className="hero__headline reveal reveal-delay-1" id="hero-headline">
