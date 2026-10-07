@@ -8,7 +8,7 @@ const franchisePoints = [
   {
     icon: '⚡',
     title: 'Ready to Deploy',
-    desc: 'PrintGo kiosks arrive pre-configured and ready to operate — minimal setup required on your end.',
+    desc: 'SmartPrinter kiosks arrive pre-configured and ready to operate — minimal setup required on your end.',
   },
   {
     icon: '📱',
@@ -28,12 +28,12 @@ const franchisePoints = [
   {
     icon: '🎯',
     title: 'Growing Network Effect',
-    desc: 'As the PrintGo network grows, your kiosk benefits from increased brand recognition.',
+    desc: 'As the SmartPrinter network grows, your kiosk benefits from increased brand recognition.',
   },
   {
     icon: '🏆',
     title: 'Proven Model',
-    desc: 'Already deployed at B.Tech colleges in Hyderabad — a validated model in real-world locations.',
+    desc: 'Already deployed at B.Tech colleges in Hyderabad and Warangal — a validated model in real-world locations.',
   },
 ];
 
@@ -53,7 +53,7 @@ const FranchisePage: React.FC = () => {
   const termsRef = useScrollReveal();
 
   useEffect(() => {
-    document.title = 'Franchise — PrintGo';
+    document.title = 'Franchise & Partnerships — SmartPrinter';
   }, []);
 
   return (
@@ -67,11 +67,11 @@ const FranchisePage: React.FC = () => {
               Build the next generation<br />of printing businesses.
             </h1>
             <p className="franchise-hero__sub reveal reveal-delay-2">
-              PrintGo provides entrepreneurs, institutions, and businesses with a proven self-service printing kiosk — complete with technology and support. You bring the location; we bring everything else.
+              SmartPrinter provides entrepreneurs, institutions, and businesses with a proven self-service printing kiosk — complete with technology and support. You bring the location; we bring everything else.
             </p>
             <div className="franchise-hero__ctas reveal reveal-delay-3">
               <Button to="/contact" variant="primary" size="lg" id="franchise-hero-cta">
-                Become a Franchise Partner
+                Become a SmartPrinter Partner
                 <svg className="btn__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
@@ -84,12 +84,12 @@ const FranchisePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Why PrintGo */}
+      {/* Why SmartPrinter */}
       <section className="franchise-why" ref={whyRef} aria-labelledby="franchise-why-headline">
         <div className="container">
           <div className="section-header reveal">
-            <span className="section-label">Why PrintGo</span>
-            <h2 id="franchise-why-headline">What you get with a PrintGo franchise.</h2>
+            <span className="section-label">Why SmartPrinter</span>
+            <h2 id="franchise-why-headline">What you get with a SmartPrinter franchise.</h2>
             <p>A complete, ready-to-operate printing business in a compact kiosk — backed by technology and a growing national network.</p>
           </div>
           <div className="franchise-why__grid">
@@ -110,7 +110,7 @@ const FranchisePage: React.FC = () => {
           <div className="section-header reveal">
             <span className="section-label section-label--white">Who It's For</span>
             <h2 id="franchise-who-headline" style={{ color: 'var(--color-white)' }}>Who can become a partner?</h2>
-            <p style={{ color: 'var(--color-gray-400)' }}>PrintGo franchise is open to a wide range of partners — individuals and institutions alike.</p>
+            <p style={{ color: 'var(--color-gray-400)' }}>SmartPrinter franchise is open to a wide range of partners — individuals and institutions alike.</p>
           </div>
           <div className="franchise-who__grid">
             {targetPartners.map((tp, i) => (

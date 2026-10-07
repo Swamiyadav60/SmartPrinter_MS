@@ -9,15 +9,16 @@
 .printgo-nav-wrapper {
   /* Semantic aliases used throughout this file */
   --sp-bg:          var(--color-white, #ffffff);
-  --sp-bg-blur:     rgba(255, 255, 255, 0.88);
-  --sp-bg-scrolled: rgba(255, 255, 255, 0.97);
-  --sp-border:      var(--color-gray-200, #e2e8f0);
-  --sp-text:        var(--color-navy, #0b1220);
+  --sp-bg-blur:     rgba(255, 255, 255, 0.92);
+  --sp-bg-scrolled: rgba(255, 255, 255, 0.98);
+  --sp-border:      var(--smart-border, #e2e8f0);
+  --sp-text:        var(--smart-navy, #0b132b);
   --sp-text-muted:  var(--color-gray-600, #475569);
-  --sp-accent:      var(--color-blue, #2563eb);
-  --sp-accent-soft: var(--color-blue-soft, #eff6ff);
-  --sp-shadow-card: 0 8px 32px -8px rgba(11, 18, 32, 0.12), 0 2px 8px -4px rgba(11, 18, 32, 0.06);
-  --sp-shadow-scrolled: 0 2px 8px rgba(11, 18, 32, 0.08);
+  --sp-accent:      var(--smart-orange, #ff5e00);
+  --sp-teal:        var(--smart-teal, #00c4b4);
+  --sp-accent-soft: var(--smart-teal-light, #e6f9f7);
+  --sp-shadow-card: 0 8px 32px -8px rgba(11, 19, 43, 0.12), 0 2px 8px -4px rgba(11, 19, 43, 0.06);
+  --sp-shadow-scrolled: 0 4px 16px rgba(11, 19, 43, 0.08);
   --sp-radius-card: var(--radius-2xl, 32px);
   --sp-radius-pill: var(--radius-full, 9999px);
 }

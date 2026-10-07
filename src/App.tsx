@@ -4,6 +4,7 @@ import Layout from './components/layout/Layout';
 import HomePage from './pages/HomePage';
 import FeaturesPage from './pages/FeaturesPage';
 import HowItWorksPage from './pages/HowItWorksPage';
+import ProductsPage from './pages/ProductsPage';
 import FranchisePage from './pages/FranchisePage';
 import ContactPage from './pages/ContactPage';
 
@@ -27,6 +28,7 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/franchise" element={<FranchisePage />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* Catch-all route routes back to home for simple setup */}

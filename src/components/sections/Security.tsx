@@ -13,7 +13,7 @@ const Security: React.FC = () => {
           <div className="security__main reveal">
             <span className="section-label">Privacy First</span>
             <h2>Zero human exposure.</h2>
-            <p>PrintGo operates entirely automatically. Your documents are never seen by any staff member, ensuring complete confidentiality for sensitive information.</p>
+            <p>SmartPrinter operates entirely automatically. Your documents are never seen by any staff member, ensuring complete confidentiality for sensitive information.</p>
           </div>
 
           {/* Bento Boxes */}

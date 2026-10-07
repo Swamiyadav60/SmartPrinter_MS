@@ -1,16 +1,5 @@
 /**
- * PrintGoNavbar — framer-motion powered navbar
- *
- * Replicates a Framer-component-style navbar (floating pill card, pill nav items,
- * animated mobile drawer) while using PrintGo brand tokens exclusively.
- * All animations are handled by framer-motion.
- *
- * Props:
- *   navLinks  — override navigation items
- *   ctaLinks  — override CTA buttons on the right
- *   variant   — "floating" (default, Framer-style pill card) | "sticky" (full-width bar)
- *
- * Theme: all overrides go in PrintGoNavbar.css scoped to .printgo-nav-wrapper
+ * PrintGoNavbar — framer-motion powered navbar for SmartPrinter
  */
 
 import React, { useState, useEffect } from "react";
@@ -22,7 +11,6 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import Button from "../ui/Button";
-import printgoLogo from "../../assets/PrintGo_logo.jpeg";
 import "./PrintGoNavbar.css";
 
 // --- Types --------------------------------------------------------------------
@@ -54,12 +42,13 @@ const DEFAULT_NAV_LINKS: NavLinkItem[] = [
   { to: "/", label: "Home" },
   { to: "/features", label: "Features" },
   { to: "/how-it-works", label: "How It Works" },
+  { to: "/products", label: "Products" },
   { to: "/franchise", label: "Franchise" },
   { to: "/contact", label: "Contact" },
 ];
 
 const DEFAULT_CTA_LINKS: CtaItem[] = [
-  { label: "Print Now", href: "https://app.printgo.co.in", variant: "secondary" },
+  { label: "Print Now", href: "https://app.smartprinter.in", variant: "secondary" },
   { label: "Get a Quote", to: "/contact", variant: "primary" },
 ];
 
@@ -103,17 +92,29 @@ const barBot = {
 // --- Logo ----------------------------------------------------------------------
 
 const Logo: React.FC = () => (
-  <Link to="/" className="spnav__logo" aria-label="PrintGo — Home">
-    <span className="spnav__logo-icon" aria-hidden="true">
-      <img
-        src={printgoLogo}
-        alt="PrintGo"
-        className="spnav__logo-img"
-        loading="eager"
-      />
+  <Link to="/" className="spnav__logo" aria-label="SmartPrinter — Home">
+    <img 
+      src="/smart-printer-logo.png" 
+      alt="SmartPrinter Logo" 
+      className="spnav__logo-img"
+      onError={(e) => {
+        e.currentTarget.style.display = 'none';
+        const fallback = e.currentTarget.nextElementSibling;
+        if (fallback) (fallback as HTMLElement).style.display = 'inline-flex';
+      }}
+    />
+    <span className="spnav__logo-fallback" style={{ display: 'none', alignItems: 'center', gap: '8px' }}>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="#00C4B4"/>
+        <path d="M10 10C10 8.89543 10.8954 8 12 8H20C21.1046 8 22 8.89543 22 10V13H10V10Z" fill="white" fillOpacity="0.4"/>
+        <rect x="7" y="12" width="18" height="11" rx="3" fill="white"/>
+        <circle cx="21" cy="15.5" r="1.25" fill="#FF5E00"/>
+        <rect x="10" y="19" width="12" height="6" rx="1.5" fill="#0B132B"/>
+        <rect x="12" y="21" width="8" height="1.5" rx="0.75" fill="white"/>
+      </svg>
     </span>
     <span className="spnav__logo-text">
-      Print<span className="spnav__logo-accent">Go</span>
+      Smart<span className="spnav__logo-accent">Printer</span>
     </span>
   </Link>
 );

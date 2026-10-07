@@ -10,7 +10,7 @@ const Solution: React.FC = () => {
       <div className="container">
         <div className="section-header reveal">
           <span className="section-label section-label--white">The Solution</span>
-          <h2 id="solution-headline" style={{ color: 'var(--color-white)' }}>Meet PrintGo.</h2>
+          <h2 id="solution-headline" style={{ color: 'var(--color-white)' }}>Meet SmartPrinter.</h2>
           <p style={{ color: 'var(--color-gray-400)' }}>
             We combine hardware, software, and a growing network to make printing effortless — available wherever people need it, whenever they need it.
           </p>

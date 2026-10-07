@@ -4,12 +4,12 @@ import './FAQ.css';
 
 const faqs = [
   {
-    q: 'What is PrintGo?',
-    a: 'PrintGo is a self-service printing technology company. We build and operate a network of automated printing kiosks that allow anyone to print documents without staff assistance — available 24/7.',
+    q: 'What is SmartPrinter?',
+    a: 'SmartPrinter is a self-service printing technology company. We build and operate a network of automated printing kiosks that allow anyone to print documents without staff assistance — available 24/7.',
   },
   {
     q: 'How does the printing process work?',
-    a: 'Scan the QR code on the kiosk → visit app.printgo.co.in → select your kiosk → upload your document → choose print settings → pay online → collect your printout. The entire process typically takes just a few minutes.',
+    a: 'Scan the QR code on the kiosk → visit app.smartprinter.in → select your kiosk → upload your document → choose print settings → pay online → collect your printout. The entire process typically takes just a few minutes.',
   },
   {
     q: 'Is my document safe and private?',
@@ -17,19 +17,19 @@ const faqs = [
   },
   {
     q: 'What types of printing are supported?',
-    a: 'Depending on the kiosk model, we support black & white printing, colour printing, single-sided and double-sided printing. Available options will be shown when you select your kiosk.',
+    a: 'Depending on the kiosk model (SmartPrinter Standard or SmartPrinter Pro), we support Black & White printing, Colour printing, single-sided and double-sided (duplex) printing.',
   },
   {
     q: 'How do I pay for printing?',
-    a: 'Payment is made online via UPI, debit/credit cards, or other supported methods through our secure payment gateway. Cash is not required.',
+    a: 'Payment is made online via UPI, debit/credit cards, or net banking through our secure payment gateway. Cash is not required.',
   },
   {
-    q: 'Where are PrintGo kiosks located?',
-    a: 'We currently have 6 active kiosks deployed at B.Tech colleges in Hyderabad. We are actively expanding to more locations across India — colleges, offices, hostels, hospitals, malls, and more.',
+    q: 'Where are SmartPrinter kiosks located?',
+    a: 'We currently have active kiosks deployed at B.Tech colleges and institutions in Hyderabad and Warangal. We are actively expanding to more locations across India — colleges, offices, hostels, hospitals, libraries, and public hubs.',
   },
   {
     q: 'Can I become a franchise partner or purchase a kiosk?',
-    a: 'Yes. PrintGo offers a franchise model for entrepreneurs, existing printing businesses, colleges, and institutions. Contact us to learn more about the opportunity and discuss commercial terms.',
+    a: 'Yes. SmartPrinter offers a partnership model for entrepreneurs, existing printing businesses, colleges, and institutions. Contact us to learn more about the opportunity and discuss commercial terms.',
   },
   {
     q: 'How do I get a kiosk for my location?',
@@ -49,7 +49,7 @@ const FAQ: React.FC = () => {
         <div className="section-header reveal">
           <span className="section-label">FAQ</span>
           <h2 id="faq-headline">Common questions answered.</h2>
-          <p>Everything you need to know about PrintGo.</p>
+          <p>Everything you need to know about SmartPrinter.</p>
         </div>
 
         <div className="faq__list reveal reveal-delay-1" role="list">

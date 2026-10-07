@@ -12,6 +12,7 @@ interface FormData {
   location: string;
   kioskCount: string;
   kioskType: string;
+  enquiryType: 'kiosk' | 'franchise';
   message: string;
 }
 
@@ -22,6 +23,7 @@ const initialFormData: FormData = {
   location: '',
   kioskCount: '1',
   kioskType: 'unsure',
+  enquiryType: 'kiosk',
   message: '',
 };
 
@@ -33,7 +35,7 @@ const ContactPage: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = 'Contact & Quote — PrintGo';
+    document.title = 'Contact & Quote — SmartPrinter';
   }, []);
 
   const handleChange = (
@@ -106,7 +108,6 @@ const ContactPage: React.FC = () => {
 
     setErrorMessage(null);
 
-    // Client-side validation on required fields
     if (!validate()) {
       return;
     }
@@ -119,8 +120,7 @@ const ContactPage: React.FC = () => {
       const email = formData.email.trim();
       const cityState = formData.location.trim();
       const numberOfKiosks = parseKiosks(formData.kioskCount);
-      const enquiryType: 'kiosk' | 'franchise' =
-        formData.kioskType.toLowerCase().includes('franchise') ? 'franchise' : 'kiosk';
+      const enquiryType = formData.enquiryType;
 
       let messageContent = formData.message.trim();
       if (formData.kioskType === 'bw') {
@@ -177,7 +177,7 @@ const ContactPage: React.FC = () => {
             <span className="section-label">Get in Touch</span>
             <h1 id="contact-headline" className="contact-page__title">Let's discuss your printing needs.</h1>
             <p className="contact-page__desc">
-              Whether you're interested in deploying a kiosk at your college, upgrading your printing business, or becoming a franchise partner, our team is ready to help.
+              Whether you're interested in deploying a SmartPrinter kiosk at your college, upgrading your printing business, or becoming a franchise partner, our team is ready to help.
             </p>
 
             <div className="contact-page__methods">
@@ -190,7 +190,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <strong>Email us</strong>
-                  <span>printgoteam@gmail.com</span>
+                  <span>hello@smartprinter.in</span>
                 </div>
               </div>
               <div className="contact-page__method">
@@ -243,6 +243,14 @@ const ContactPage: React.FC = () => {
                     {errorMessage}
                   </div>
                 )}
+
+                <div className="form-group mb-4">
+                  <label htmlFor="enquiryType">Inquiry Type <span aria-hidden="true">*</span></label>
+                  <select id="enquiryType" value={formData.enquiryType} onChange={handleChange}>
+                    <option value="kiosk">Kiosk Deployment Quote</option>
+                    <option value="franchise">Franchise Partnership</option>
+                  </select>
+                </div>
 
                 <div className="form-row">
                   <div className="form-group">
@@ -321,11 +329,11 @@ const ContactPage: React.FC = () => {
                     </select>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="kioskType">Preferred type</label>
+                    <label htmlFor="kioskType">Preferred Model</label>
                     <select id="kioskType" value={formData.kioskType} onChange={handleChange}>
                       <option value="unsure">Not sure yet</option>
-                      <option value="bw">B&W Only</option>
-                      <option value="color">B&W + Colour</option>
+                      <option value="bw">SmartPrinter (B&W)</option>
+                      <option value="color">SmartPrinter Pro (Colour + B&W)</option>
                     </select>
                   </div>
                 </div>

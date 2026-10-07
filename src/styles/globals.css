@@ -3,27 +3,42 @@
 @tailwind utilities;
 
 /* ============================================================
-   PrintGo — Global Design System v2 (Premium Tech)
+   SmartPrinter — Global Design System v2 (Premium Tech)
    ============================================================ */
 
 :root {
-  /* Brand Colors */
-  --color-navy:        #0B1220;
-  --color-navy-800:    #121b2d;
+  /* SmartPrinter Official Reference Design System */
+  --smart-navy:        #0B132B;
+  --smart-navy-light:  #1C2541;
+  --smart-navy-dark:   #060B18;
+  --smart-orange:      #FF5E00;
+  --smart-orange-hover:#E05300;
+  --smart-orange-light:#FFF2EB;
+  --smart-teal:        #00C4B4;
+  --smart-teal-hover:  #00A89A;
+  --smart-teal-light:  #E6F9F7;
+  --smart-mint:        #E8F7F5;
+  --smart-cream:       #FFF8F0;
+  --smart-bg:          #F8FAFC;
+  --smart-card:        #FFFFFF;
+  --smart-border:      #E2E8F0;
+
+  /* Backward Compatibility Tokens */
+  --color-navy:        var(--smart-navy);
+  --color-navy-800:    var(--smart-navy-light);
   --color-navy-700:    #16233b;
-  --color-blue:        #2563EB;
-  --color-blue-600:    #1d4ed8;
-  --color-blue-soft:   #EFF6FF;
-  --color-blue-soft2:  #e0f2fe;
+  --color-blue:        var(--smart-teal);
+  --color-blue-600:    var(--smart-teal-hover);
+  --color-blue-soft:   var(--smart-teal-light);
   --color-white:       #FFFFFF;
-  --color-gray-50:     #F8FAFC;
+  --color-gray-50:     var(--smart-bg);
   --color-gray-100:    #F1F5F9;
-  --color-gray-200:    #E2E8F0;
+  --color-gray-200:    var(--smart-border);
   --color-gray-300:    #CBD5E1;
   --color-gray-400:    #94A3B8;
   --color-gray-500:    #64748B;
   --color-gray-600:    #475569;
-  --color-text:        #0f172a;
+  --color-text:        #0F172A;
   --color-text-muted:  #475569;
 
   /* Typography */
@@ -46,19 +61,20 @@
   --space-32: 8rem;
 
   /* Radius */
-  --radius-sm:  6px;
-  --radius-md:  10px;
-  --radius-lg:  16px;
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
   --radius-xl:  24px;
   --radius-2xl: 32px;
   --radius-full: 9999px;
 
-  /* Shadows - Softer, more premium */
-  --shadow-sm: 0 1px 2px rgba(11, 18, 32, 0.04);
-  --shadow-md: 0 4px 12px -2px rgba(11, 18, 32, 0.06), 0 2px 4px -2px rgba(11, 18, 32, 0.03);
-  --shadow-lg: 0 12px 24px -4px rgba(11, 18, 32, 0.08), 0 4px 8px -4px rgba(11, 18, 32, 0.04);
-  --shadow-xl: 0 24px 48px -12px rgba(11, 18, 32, 0.12);
-  --shadow-blue: 0 8px 24px -8px rgba(37, 99, 235, 0.4);
+  /* Shadows - Premium Soft */
+  --shadow-sm: 0 2px 4px rgba(11, 19, 43, 0.03);
+  --shadow-md: 0 8px 16px -4px rgba(11, 19, 43, 0.06), 0 2px 6px -2px rgba(11, 19, 43, 0.04);
+  --shadow-lg: 0 16px 32px -6px rgba(11, 19, 43, 0.08), 0 6px 12px -4px rgba(11, 19, 43, 0.04);
+  --shadow-xl: 0 28px 56px -12px rgba(11, 19, 43, 0.14);
+  --shadow-teal: 0 10px 25px -5px rgba(0, 196, 180, 0.35);
+  --shadow-orange: 0 10px 25px -5px rgba(255, 94, 0, 0.35);
 
   /* Transitions */
   --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);

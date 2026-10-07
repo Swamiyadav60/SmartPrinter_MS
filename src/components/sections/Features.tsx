@@ -82,7 +82,7 @@ const Features: React.FC = () => {
         <div className="section-header reveal">
           <span className="section-label">Features</span>
           <h2 id="features-headline">Built for convenience. Designed for trust.</h2>
-          <p>Every aspect of PrintGo is designed to make printing faster, easier, and more private for everyone.</p>
+          <p>Every aspect of SmartPrinter is designed to make printing faster, easier, and more private for everyone.</p>
         </div>
 
         <div className="features__grid">

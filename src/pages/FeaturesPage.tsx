@@ -10,7 +10,7 @@ const FeaturesPage: React.FC = () => {
   const ref = useScrollReveal();
 
   useEffect(() => {
-    document.title = 'Features — PrintGo';
+    document.title = 'Features — SmartPrinter';
   }, []);
 
   return (
@@ -23,7 +23,7 @@ const FeaturesPage: React.FC = () => {
             Designed for convenience.<br />Built for trust.
           </h1>
           <p className="page-hero__sub reveal reveal-delay-2">
-            PrintGo combines hardware, software, and security to deliver a seamless self-service printing experience — anywhere, any time.
+            SmartPrinter combines hardware, software, and security to deliver a seamless self-service printing experience — anywhere, any time.
           </p>
         </div>
       </section>

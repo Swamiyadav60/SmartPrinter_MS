@@ -9,7 +9,7 @@ const HowItWorksPage: React.FC = () => {
   const detailRef = useScrollReveal();
 
   useEffect(() => {
-    document.title = 'How It Works — PrintGo';
+    document.title = 'How It Works — SmartPrinter';
   }, []);
 
   return (
@@ -21,7 +21,7 @@ const HowItWorksPage: React.FC = () => {
             From scan to printout<br />in minutes.
           </h1>
           <p className="page-hero__sub page-hero__sub--muted reveal reveal-delay-2">
-            PrintGo is designed to be the fastest, simplest way to print. No accounts, no queues, no waiting for staff.
+            SmartPrinter is designed to be the fastest, simplest way to print. No accounts, no queues, no waiting for staff.
           </p>
         </div>
       </section>

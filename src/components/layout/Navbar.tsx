@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Button from '../ui/Button';
-import printgoLogo from '../../assets/PrintGo_logo.jpeg';
+import smartPrinterLogo from '../../assets/PrintGo_logo.jpeg';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
@@ -24,6 +24,7 @@ const Navbar: React.FC = () => {
     { to: '/', label: 'Home' },
     { to: '/features', label: 'Features' },
     { to: '/how-it-works', label: 'How It Works' },
+    { to: '/products', label: 'Products' },
     { to: '/franchise', label: 'Franchise' },
     { to: '/contact', label: 'Contact' },
   ];
@@ -35,15 +36,15 @@ const Navbar: React.FC = () => {
     >
       <div className="navbar__inner container">
         {/* Logo */}
-        <Link to="/" className="navbar__logo" aria-label="PrintGo — Home">
+        <Link to="/" className="navbar__logo" aria-label="SmartPrinter — Home">
           <span className="navbar__logo-icon" aria-hidden="true">
             <img
-              src={printgoLogo}
-              alt="PrintGo"
+              src={smartPrinterLogo}
+              alt="SmartPrinter"
               className="navbar__logo-img"
             />
           </span>
-          <span className="navbar__logo-text">Print<span className="navbar__logo-accent">Go</span></span>
+          <span className="navbar__logo-text">Smart<span className="navbar__logo-accent">Printer</span></span>
         </Link>
 
         {/* Desktop Nav */}
@@ -68,7 +69,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Actions */}
         <div className="navbar__actions">
           <Button
-            href="https://app.printgo.co.in"
+            href="https://app.smartprinter.in"
             variant="secondary"
             size="sm"
             id="nav-print-now"
@@ -123,7 +124,7 @@ const Navbar: React.FC = () => {
           </ul>
           <div className="navbar__mobile-actions">
             <Button
-              href="https://app.printgo.co.in"
+              href="https://app.smartprinter.in"
               variant="secondary"
               fullWidth
               id="mobile-print-now"

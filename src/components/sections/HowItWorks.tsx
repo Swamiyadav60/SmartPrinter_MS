@@ -10,32 +10,40 @@ import imgCollect from '../../assets/Printgo_how-it-works_collect.png';
 const steps = [
   {
     num: '01',
-    title: 'Scan the Kiosk QR Code',
-    desc: 'Scan the QR code displayed on the PrintGo kiosk with your phone to open the PrintGo web app. No app installation required.',
+    title: 'Scan QR Code',
+    desc: 'Scan the QR code on the SmartPrinter kiosk using your smartphone camera or any QR scanner. Instant access — no app download required.',
     image: 'bg-gradient-to-br from-blue-500/20 to-purple-500/20',
     glowColor: 'rgba(59,130,246,0.12)',
     imgSrc: imgUpload1,
   },
   {
     num: '02',
-    title: 'Upload Your Document',
-    desc: 'Upload your PDF or DOC file directly from your phone or laptop. Your document is securely sent to the selected kiosk.',
+    title: 'Upload Document',
+    desc: 'Select your PDF, DOCX, or image file directly from your mobile phone or laptop. Transferred with end-to-end encryption.',
     image: 'bg-gradient-to-br from-green-500/20 to-blue-500/20',
     glowColor: 'rgba(34,197,94,0.12)',
     imgSrc: imgUpload3,
   },
   {
     num: '03',
-    title: 'Choose & Pay',
-    desc: 'Select your print preferences, check your order, and pay securely online.',
+    title: 'Select Printing Options',
+    desc: 'Choose your print preferences — Black & White or Colour, single or double-sided (duplex), and page range.',
     image: 'bg-gradient-to-br from-yellow-500/20 to-red-500/20',
     glowColor: 'rgba(234,179,8,0.12)',
     imgSrc: imgChoose,
   },
   {
     num: '04',
-    title: 'Collect Your Printout',
-    desc: 'Your document prints in seconds — no queue, no waiting on staff.',
+    title: 'Make Payment',
+    desc: 'Pay instantly via UPI (GPay, PhonePe, Paytm), debit/credit card, or net banking with real-time payment confirmation.',
+    image: 'bg-gradient-to-br from-purple-500/20 to-pink-500/20',
+    glowColor: 'rgba(168,85,247,0.12)',
+    imgSrc: null,
+  },
+  {
+    num: '05',
+    title: 'Collect Printed Document',
+    desc: 'Your high-speed printout is generated immediately at the kiosk. Zero waiting, zero staff assistance.',
     image: 'bg-gradient-to-br from-pink-500/20 to-orange-500/20',
     glowColor: 'rgba(236,72,153,0.12)',
     imgSrc: imgCollect,
@@ -89,7 +97,7 @@ const HowItWorks: React.FC = () => {
         >
           {/* Section header */}
           <div className="mb-12">
-            <span className="block text-[#2563EB] font-bold uppercase tracking-widest text-sm mb-4 font-sans">
+            <span className="block text-[#00C4B4] font-bold uppercase tracking-widest text-sm mb-4 font-sans">
               The Process
             </span>
             <h2
@@ -114,7 +122,7 @@ const HowItWorks: React.FC = () => {
                   <div className="flex items-center mb-3">
                     <span
                       className="text-sm font-bold tracking-wider mr-4 font-sans transition-colors duration-300"
-                      style={{ color: isActive ? '#2563EB' : '#4b5563' }}
+                      style={{ color: isActive ? '#FF5E00' : '#4b5563' }}
                     >
                       {step.num}
                     </span>
@@ -123,7 +131,7 @@ const HowItWorks: React.FC = () => {
                         {isActive && !isHovered && (
                           <motion.div
                             key={`progress-${idx}-${activeIndex}`}
-                            className="absolute top-0 left-0 h-full bg-[#2563EB] origin-left"
+                            className="absolute top-0 left-0 h-full bg-[#00C4B4] origin-left"
                             initial={{ scaleX: 0 }}
                             animate={{ scaleX: 1 }}
                             exit={{ scaleX: 1, opacity: 0 }}
@@ -137,7 +145,7 @@ const HowItWorks: React.FC = () => {
                         {isActive && isHovered && (
                           <motion.div
                             key={`paused-${idx}`}
-                            className="absolute top-0 left-0 h-full w-full bg-[#2563EB] opacity-40"
+                            className="absolute top-0 left-0 h-full w-full bg-[#00C4B4] opacity-40"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 0.4 }}
                             exit={{ opacity: 0 }}

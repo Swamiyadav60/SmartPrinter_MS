@@ -14,7 +14,7 @@ const FinalCTA: React.FC = () => {
             Ready to make printing smarter?
           </h2>
           <p className="final-cta__sub">
-            Whether you want to deploy a kiosk, become a franchise partner, or simply try PrintGo — we're here to help.
+            Whether you want to deploy a kiosk, become a SmartPrinter partner, or simply print a document — we're here to help.
           </p>
           <div className="final-cta__buttons">
             <Button to="/contact" variant="primary" size="lg" id="final-cta-quote">
@@ -24,9 +24,9 @@ const FinalCTA: React.FC = () => {
               </svg>
             </Button>
             <Button to="/franchise" variant="secondary" size="lg" id="final-cta-franchise">
-              Become a Franchise Partner
+              Become a SmartPrinter Partner
             </Button>
-            <Button href="https://app.printgo.co.in" variant="ghost" size="lg" id="final-cta-print">
+            <Button href="https://app.smartprinter.in" variant="ghost" size="lg" id="final-cta-print">
               Print Now ↗
             </Button>
           </div>

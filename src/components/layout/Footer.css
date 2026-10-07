@@ -1,6 +1,6 @@
 /* ── Footer ── */
 .footer {
-  background-color: var(--color-navy);
+  background-color: var(--smart-navy, #0B132B);
   color: var(--color-white);
 }
 
@@ -47,11 +47,11 @@
 }
 
 .footer__logo-accent {
-  color: var(--color-blue-soft);
+  color: var(--smart-orange, #FF5E00);
 }
 
 .footer__tagline {
-  color: var(--color-gray-300);
+  color: #94A3B8;
   font-size: 0.9375rem;
   line-height: 1.6;
   margin-bottom: var(--space-6);
@@ -65,7 +65,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gray-300);
+  color: var(--smart-teal, #00C4B4);
   margin-bottom: var(--space-5);
 }
 
@@ -77,13 +77,13 @@
 
 .footer__link {
   font-size: 0.9375rem;
-  color: var(--color-gray-300);
+  color: #CBD5E1;
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .footer__link:hover {
-  color: var(--color-white);
+  color: var(--smart-teal, #00C4B4);
 }
 
 .footer__links--contact li {

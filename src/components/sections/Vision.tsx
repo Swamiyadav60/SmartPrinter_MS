@@ -16,7 +16,7 @@ const Vision: React.FC = () => {
             <span className="vision__headline-accent">self-service printing network.</span>
           </h2>
           <p className="vision__sub">
-            Starting with Hyderabad, we are expanding city by city — placing PrintGo kiosks wherever people need fast, private, and accessible printing. Join the network as a franchise partner and be part of this movement.
+            Starting with Hyderabad and Warangal, we are expanding city by city — placing SmartPrinter kiosks wherever people need fast, private, and accessible printing. Join the network as a franchise partner and be part of this movement.
           </p>
           <div className="vision__ctas">
             <Button to="/contact" variant="primary" size="lg" id="vision-quote">
