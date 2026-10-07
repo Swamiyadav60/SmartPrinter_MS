@@ -26,7 +26,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* ── New framer-motion navbar ── */}
       <PrintGoNavbar variant="floating" />
 
-      <main id="main-content" style={{ paddingTop: "88px" }}>
+      <main id="main-content">
         {children}
       </main>
       <Footer />

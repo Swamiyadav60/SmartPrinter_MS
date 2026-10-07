@@ -44,14 +44,43 @@
   color: var(--color-white);
 }
 
+@media (max-width: 1023px) {
+  .final-cta {
+    padding: var(--space-20) 0;
+  }
+}
+
 @media (max-width: 640px) {
+  .final-cta {
+    padding: var(--space-16) 0;
+  }
+
   .final-cta__buttons {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    gap: var(--space-3);
   }
 
   .final-cta__buttons .btn {
     width: 100%;
     max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .final-cta {
+    padding: var(--space-12) 0;
+  }
+
+  .final-cta__headline {
+    font-size: clamp(1.65rem, 6.5vw, 2.2rem);
+    margin-bottom: var(--space-4);
+  }
+
+  .final-cta__sub {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
   }
 }

@@ -64,20 +64,45 @@
   width: 100%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
   .solution__pillars {
     flex-direction: column;
     gap: var(--space-4);
   }
 
   .solution__pillar {
-    max-width: 100%;
+    max-width: 480px;
     width: 100%;
   }
 
   .solution__pillar-connector {
     width: 2px;
-    height: 30px;
+    height: 24px;
     transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .solution {
+    padding: var(--space-14) 0;
+  }
+
+  .solution__pillar {
+    padding: var(--space-6) var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+
+  .solution__pillar-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--space-3);
+  }
+
+  .solution__pillar-title {
+    font-size: 1rem;
+  }
+
+  .solution__pillar-desc {
+    font-size: 0.875rem;
   }
 }

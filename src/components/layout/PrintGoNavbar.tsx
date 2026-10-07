@@ -91,8 +91,8 @@ const barBot = {
 
 // --- Logo ----------------------------------------------------------------------
 
-const Logo: React.FC = () => (
-  <Link to="/" className="spnav__logo" aria-label="SmartPrinter — Home">
+const Logo: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
+  <Link to="/" className="spnav__logo" aria-label="SmartPrinter — Home" onClick={onClick}>
     <img 
       src="/smart-printer-logo.png" 
       alt="SmartPrinter Logo" 
@@ -149,6 +149,15 @@ const PrintGoNavbar: React.FC<PrintGoNavbarProps> = ({
 
   useEffect(() => { setMobileOpen(false); }, [location.pathname]);
 
+  // Close mobile drawer on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const menuState = mobileOpen ? "open" : "closed";
   const isFloating = variant === "floating";
 
@@ -166,7 +175,7 @@ const PrintGoNavbar: React.FC<PrintGoNavbarProps> = ({
         <div className={["spnav__card", isFloating ? "spnav__card--floating" : ""].filter(Boolean).join(" ")}>
           <div className="spnav__inner">
 
-            <Logo />
+            <Logo onClick={() => setMobileOpen(false)} />
 
             {/* Desktop nav links */}
             <nav className="spnav__nav" aria-label="Primary navigation">
@@ -229,11 +238,20 @@ const PrintGoNavbar: React.FC<PrintGoNavbarProps> = ({
                     {navLinks.map(({ to, href, label }, i) => (
                       <motion.li key={label} custom={i} variants={itemVariants} initial="closed" animate="open" exit="closed">
                         {href ? (
-                          <a href={href} className="spnav__drawer-link" target="_blank" rel="noopener noreferrer">{label}</a>
+                          <a 
+                            href={href} 
+                            className="spnav__drawer-link" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {label}
+                          </a>
                         ) : (
                           <NavLink
                             to={to!}
                             end={to === "/"}
+                            onClick={() => setMobileOpen(false)}
                             className={({ isActive }) =>
                               ["spnav__drawer-link", isActive ? "spnav__drawer-link--active" : ""].filter(Boolean).join(" ")
                             }
@@ -248,9 +266,9 @@ const PrintGoNavbar: React.FC<PrintGoNavbarProps> = ({
                   <div className="spnav__drawer-actions">
                     {ctaLinks.map(({ label, to, href, variant: v }) =>
                       to ? (
-                        <Button key={label} to={to} variant={v} fullWidth>{label}</Button>
+                        <Button key={label} to={to} variant={v} fullWidth onClick={() => setMobileOpen(false)}>{label}</Button>
                       ) : (
-                        <Button key={label} href={href} variant={v} fullWidth>{label}</Button>
+                        <Button key={label} href={href} variant={v} fullWidth onClick={() => setMobileOpen(false)}>{label}</Button>
                       ),
                     )}
                   </div>

@@ -159,20 +159,112 @@
   line-height: 1.7;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
   .franchise-why__grid,
   .franchise-who__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
   }
 }
 
 @media (max-width: 640px) {
+  .franchise-hero {
+    padding: var(--space-14) 0 var(--space-10);
+  }
+
   .franchise-why__grid,
   .franchise-who__grid {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
   
   .franchise-hero__ctas {
     flex-direction: column;
+    align-items: stretch;
+    max-width: 320px;
+  }
+
+  .franchise-hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .franchise-hero {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+
+  .franchise-hero__headline {
+    font-size: clamp(1.75rem, 7.5vw, 2.35rem);
+    margin-bottom: var(--space-4);
+  }
+
+  .franchise-hero__sub {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+  }
+
+  .franchise-why {
+    padding: var(--space-12) 0;
+  }
+
+  .franchise-why__card {
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+
+  .franchise-why__icon {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .franchise-why__title {
+    font-size: 1.05rem;
+  }
+
+  .franchise-why__desc {
+    font-size: 0.875rem;
+  }
+
+  .franchise-who {
+    padding: var(--space-12) 0;
+  }
+
+  .franchise-who__card {
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+
+  .franchise-who__card-title {
+    font-size: 0.95rem;
+  }
+
+  .franchise-who__card-desc {
+    font-size: 0.85rem;
+  }
+
+  .franchise-terms {
+    padding: var(--space-10) 0;
+  }
+
+  .franchise-terms__inner {
+    padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-xl);
+  }
+
+  .franchise-terms__inner h2 {
+    font-size: 1.25rem;
+  }
+
+  .franchise-terms__inner p {
+    font-size: 0.9rem;
+    margin-bottom: var(--space-6);
+  }
+
+  .franchise-terms__inner .btn {
+    width: 100%;
+    max-width: 320px;
   }
 }

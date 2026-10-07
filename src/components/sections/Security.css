@@ -56,7 +56,59 @@
 .security__bento h3 { color: var(--color-white); font-size: 1.25rem; font-weight: 800; margin-bottom: var(--space-3); }
 .security__bento p { color: #CBD5E1; font-size: 1rem; line-height: 1.6; }
 
+@media (max-width: 1023px) {
+  .security__grid {
+    gap: var(--space-5);
+  }
+}
+
 @media (max-width: 768px) {
-  .security__grid { grid-template-columns: 1fr; }
-  .security__main { padding: var(--space-8) var(--space-6); }
+  .security {
+    padding: var(--space-16) 0;
+  }
+  .security__grid {
+    grid-template-columns: 1fr;
+  }
+  .security__main {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .security {
+    padding: var(--space-12) 0;
+  }
+
+  .security__main {
+    padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-xl);
+  }
+
+  .security__main p {
+    font-size: 0.9375rem;
+  }
+
+  .security__bento {
+    padding: var(--space-5);
+    border-radius: var(--radius-xl);
+  }
+
+  .bento-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--space-4);
+  }
+
+  .bento-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .security__bento h3 {
+    font-size: 1.1rem;
+  }
+
+  .security__bento p {
+    font-size: 0.875rem;
+  }
 }

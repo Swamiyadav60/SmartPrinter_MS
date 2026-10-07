@@ -202,7 +202,11 @@
   margin-bottom: var(--space-8);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
+  .contact-page {
+    padding: var(--space-16) 0;
+  }
+
   .contact-page__container {
     grid-template-columns: 1fr;
     gap: var(--space-12);
@@ -210,21 +214,77 @@
 
   .contact-page__info {
     text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
   }
 
   .contact-page__methods {
     align-items: center;
   }
+
+  .contact-page__form-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  .contact-page {
+    padding: var(--space-12) 0;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
   }
-  
+
   .contact-page__form-wrap {
-    padding: var(--space-6);
+    padding: var(--space-6) var(--space-5);
+    border-radius: var(--radius-xl);
+  }
+
+  .contact-page__title {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+  }
+
+  .contact-page__desc {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-6);
+  }
+
+  /* Prevent automatic iOS Safari zoom by using 16px font-size */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+    padding: 0.75rem 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding: var(--space-8) 0;
+  }
+
+  .contact-page__form-wrap {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .contact-page__form-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-page__method {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-2);
+  }
+
+  .contact-page__method-icon {
+    width: 40px;
+    height: 40px;
   }
 }
 

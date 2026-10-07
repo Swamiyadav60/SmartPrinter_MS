@@ -36,7 +36,47 @@
 .solutions__card-content h3 { font-size: 1.25rem; margin-bottom: var(--space-2); }
 .solutions__card-content p { font-size: 0.9375rem; margin: 0; }
 
+@media (max-width: 1023px) {
+  .solutions {
+    padding: var(--space-20) 0;
+  }
+  .solutions__grid {
+    gap: var(--space-5);
+  }
+}
+
 @media (max-width: 768px) {
-  .solutions__grid { grid-template-columns: 1fr; }
-  .solutions__card { flex-direction: column; text-align: center; }
+  .solutions {
+    padding: var(--space-16) 0;
+  }
+  .solutions__grid {
+    grid-template-columns: 1fr;
+  }
+  .solutions__card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .solutions {
+    padding: var(--space-12) 0;
+  }
+  .solutions__card {
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    gap: var(--space-3);
+  }
+  .solutions__card-visual {
+    width: 56px;
+    height: 56px;
+    font-size: 1.75rem;
+    border-radius: var(--radius-md);
+  }
+  .solutions__card-content h3 {
+    font-size: 1.05rem;
+  }
+  .solutions__card-content p {
+    font-size: 0.875rem;
+  }
 }

@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             <img 
               src="/smart-printer-logo.png" 
               alt="SmartPrinter Logo" 
-              className="h-9 w-auto object-contain"
+              className="footer__logo-img"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
                 const fallback = e.currentTarget.nextElementSibling;

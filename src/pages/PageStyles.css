@@ -14,11 +14,13 @@
 
 .page-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
   font-weight: 800;
   color: var(--color-navy);
   margin-bottom: var(--space-5);
   margin-top: var(--space-3);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .page-hero__title--white {
@@ -74,8 +76,53 @@
   line-height: 1.65;
 }
 
+@media (max-width: 1023px) {
+  .page-hero {
+    padding: var(--space-16) 0 var(--space-12);
+  }
+}
+
 @media (max-width: 640px) {
+  .page-hero {
+    padding: var(--space-12) 0 var(--space-10);
+  }
+
+  .hiw-detail {
+    padding: var(--space-12) 0;
+  }
+
   .hiw-detail__grid {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .hiw-detail__card {
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+
+  .page-hero__title {
+    font-size: clamp(1.65rem, 6.5vw, 2.2rem);
+    margin-bottom: var(--space-3);
+  }
+
+  .page-hero__sub {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .hiw-detail {
+    padding: var(--space-10) 0;
+  }
+
+  .hiw-detail__inner h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-5);
   }
 }

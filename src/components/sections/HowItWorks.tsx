@@ -85,9 +85,9 @@ const HowItWorks: React.FC = () => {
     // so Tailwind color utilities (text-white, text-gray-400, etc.) work correctly.
     <section
       data-theme="dark-tw"
-      className="w-full bg-[#0A0A0A] py-24 md:py-32 overflow-hidden"
+      className="w-full bg-[#0A0A0A] py-16 sm:py-24 md:py-32 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-12 md:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row gap-8 sm:gap-12 md:gap-16 items-center">
 
         {/* ── Left Panel: Text & Step Controls (40%) ── */}
         <div
@@ -96,7 +96,7 @@ const HowItWorks: React.FC = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Section header */}
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <span className="block text-[#00C4B4] font-bold uppercase tracking-widest text-sm mb-4 font-sans">
               The Process
             </span>
@@ -194,7 +194,7 @@ const HowItWorks: React.FC = () => {
         </div>
 
         {/* ── Right Panel: Media (60%) ── */}
-        <div className="w-full md:w-[60%] relative h-[400px] md:h-[560px] flex items-center justify-center">
+        <div className="w-full md:w-[60%] relative h-[280px] sm:h-[380px] md:h-[560px] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
