@@ -1,7 +1,7 @@
 /* ── Features ── */
 .features {
   padding: var(--space-24) 0;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(232, 247, 245, 0.35) 100%);
+  background: var(--bg, #f4f3ef);
 }
 
 .features__grid {
@@ -12,28 +12,28 @@
 
 .features__card {
   background: #FFFFFF;
-  border: 1px solid var(--smart-border, #E2E8F0);
-  border-radius: var(--radius-xl);
+  border: 1px solid var(--border, #d9d8d3);
+  border-radius: var(--radius-lg);
   padding: var(--space-8);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 1px 3px rgba(26, 26, 24, 0.04);
   transition: box-shadow var(--transition-normal), transform var(--transition-normal), border-color var(--transition-normal);
 }
 
 .features__card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 24px rgba(26, 26, 24, 0.08);
   transform: translateY(-3px);
-  border-color: var(--smart-teal, #00C4B4);
+  border-color: var(--green, #1a9b6c);
 }
 
 .features__icon {
   width: 48px;
   height: 48px;
-  background: var(--smart-teal-light, #E6F9F7);
+  background: var(--green-l, #e6f5ef);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--smart-teal, #00C4B4);
+  color: var(--green, #1a9b6c);
   margin-bottom: var(--space-5);
   transition: all var(--transition-normal);
 }
@@ -44,20 +44,21 @@
 }
 
 .features__card:hover .features__icon {
-  background: var(--smart-teal, #00C4B4);
+  background: var(--green, #1a9b6c);
   color: #FFFFFF;
 }
 
 .features__card-title {
+  font-family: var(--font-display);
   font-size: 1.125rem;
-  font-weight: 800;
-  color: var(--smart-navy, #0B132B);
+  font-weight: 700;
+  color: var(--ink, #1a1a18);
   margin-bottom: var(--space-3);
 }
 
 .features__card-desc {
   font-size: 0.9375rem;
-  color: #475569;
+  color: var(--gray, #6b6960);
   line-height: 1.65;
 }
 

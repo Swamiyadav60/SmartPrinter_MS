@@ -1,16 +1,16 @@
-/* ── Premium Buttons ── */
+/* ── Investor Portal Styled Buttons ── */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.625rem;
-  padding: 0.875rem 1.75rem;
-  font-family: var(--font-primary);
+  padding: 0.8rem 1.625rem;
+  font-family: var(--font-display);
   font-size: 0.9375rem;
   font-weight: 600;
-  line-height: 1;
-  border-radius: var(--radius-full);
-  border: 1.5px solid transparent;
+  line-height: 1.2;
+  border-radius: 12px;
+  border: 1px solid transparent;
   cursor: pointer;
   transition: all var(--transition-normal);
   text-decoration: none;
@@ -18,73 +18,77 @@
 }
 
 .btn--primary {
-  background-color: var(--smart-navy, #0B132B);
-  color: var(--color-white, #FFFFFF);
-  border-color: var(--smart-navy, #0B132B);
-  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, #1a9b6c 0%, #127a54 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(26, 155, 108, 0.3);
 }
 
 .btn--primary:hover {
-  background-color: var(--smart-navy-light, #1C2541);
-  border-color: var(--smart-navy-light, #1C2541);
-  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, #16855c 0%, #0e6445 100%);
+  border-color: transparent;
+  box-shadow: 0 8px 22px rgba(26, 155, 108, 0.42);
   transform: translateY(-2px);
+  color: #ffffff;
 }
 
 .btn--secondary {
-  background-color: #FFFFFF;
-  color: var(--smart-navy, #0B132B);
-  border-color: var(--smart-border, #E2E8F0);
-  box-shadow: var(--shadow-sm);
+  background-color: #ffffff;
+  color: #1a1a18;
+  border-color: #d9d8d3;
+  box-shadow: 0 1px 3px rgba(26, 26, 24, 0.05);
 }
 
 .btn--secondary:hover {
-  background-color: var(--smart-mint, #E8F7F5);
-  border-color: var(--smart-teal, #00C4B4);
-  color: var(--smart-navy, #0B132B);
+  background-color: #e6f5ef;
+  border-color: #1a9b6c;
+  color: #127a54;
   transform: translateY(-2px);
 }
 
 .btn--accent {
-  background: linear-gradient(135deg, var(--smart-orange, #FF5E00) 0%, #FF7A29 100%);
-  color: var(--color-white, #FFFFFF);
+  background: linear-gradient(135deg, #e8891a 0%, #cc7410 100%);
+  color: #ffffff;
   border-color: transparent;
-  box-shadow: var(--shadow-orange);
+  box-shadow: 0 4px 14px rgba(232, 137, 26, 0.3);
 }
 
 .btn--accent:hover {
-  background: linear-gradient(135deg, var(--smart-orange-hover, #E05300) 0%, #FF5E00 100%);
-  box-shadow: 0 14px 30px -6px rgba(255, 94, 0, 0.45);
+  background: linear-gradient(135deg, #d47b14 0%, #b8660b 100%);
+  box-shadow: 0 8px 22px rgba(232, 137, 26, 0.42);
   transform: translateY(-2px);
+  color: #ffffff;
 }
 
 .btn--teal {
-  background: linear-gradient(135deg, var(--smart-teal, #00C4B4) 0%, #17B0CF 100%);
-  color: var(--color-white, #FFFFFF);
+  background: linear-gradient(135deg, #1a9b6c 0%, #127a54 100%);
+  color: #ffffff;
   border-color: transparent;
-  box-shadow: var(--shadow-teal);
+  box-shadow: 0 4px 14px rgba(26, 155, 108, 0.3);
 }
 
 .btn--teal:hover {
-  background: linear-gradient(135deg, var(--smart-teal-hover, #00A89A) 0%, #00C4B4 100%);
-  box-shadow: 0 14px 30px -6px rgba(0, 196, 180, 0.45);
+  background: linear-gradient(135deg, #16855c 0%, #0e6445 100%);
+  box-shadow: 0 8px 22px rgba(26, 155, 108, 0.42);
   transform: translateY(-2px);
+  color: #ffffff;
 }
 
 .btn--ghost {
   background-color: transparent;
-  color: var(--color-white, #FFFFFF);
-  border-color: rgba(255,255,255,0.3);
+  color: inherit;
+  border-color: rgba(217, 216, 211, 0.6);
 }
 
 .btn--ghost:hover {
-  background-color: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,1);
+  background-color: rgba(26, 155, 108, 0.08);
+  border-color: #1a9b6c;
+  color: #127a54;
   transform: translateY(-2px);
 }
 
-.btn--sm { padding: 0.625rem 1.25rem; font-size: 0.875rem; }
-.btn--lg { padding: 1.125rem 2.25rem; font-size: 1rem; }
+.btn--sm { padding: 0.55rem 1.15rem; font-size: 0.875rem; border-radius: 10px; }
+.btn--lg { padding: 0.95rem 2rem; font-size: 1rem; border-radius: 12px; }
 .btn--full { width: 100%; }
 
 .btn__icon {

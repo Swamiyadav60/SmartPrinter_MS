@@ -1,7 +1,8 @@
 /* ── Franchise Page ── */
 .franchise-hero {
   padding: var(--space-20) 0 var(--space-16);
-  background: linear-gradient(135deg, #0B1220 0%, #111827 60%, #1a2540 100%);
+  background: var(--sidebar, #111110);
+  border-bottom: 1px solid var(--sidebar-border, #232321);
   position: relative;
   overflow: hidden;
 }
@@ -13,7 +14,7 @@
   right: 0;
   width: 50%;
   height: 100%;
-  background: radial-gradient(circle at center right, rgba(37,99,235,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at center right, rgba(26, 155, 108, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -36,7 +37,7 @@
 
 .franchise-hero__sub {
   font-size: 1.125rem;
-  color: var(--color-gray-400);
+  color: #888780;
   line-height: 1.7;
   margin-bottom: var(--space-8);
 }
@@ -50,7 +51,7 @@
 /* Why Section */
 .franchise-why {
   padding: var(--space-20) 0;
-  background: var(--color-gray-50);
+  background: var(--bg, #f4f3ef);
 }
 
 .franchise-why__grid {
@@ -61,14 +62,16 @@
 
 .franchise-why__card {
   background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-xl);
+  border: 1px solid var(--border, #d9d8d3);
+  border-radius: var(--radius-lg);
   padding: var(--space-8);
-  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  box-shadow: 0 1px 3px rgba(26, 26, 24, 0.04);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal), border-color var(--transition-normal);
 }
 
 .franchise-why__card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 24px rgba(26, 26, 24, 0.08);
+  border-color: var(--green, #1a9b6c);
   transform: translateY(-2px);
 }
 
@@ -78,22 +81,25 @@
 }
 
 .franchise-why__title {
+  font-family: var(--font-display);
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--ink, #1a1a18);
   margin-bottom: var(--space-3);
 }
 
 .franchise-why__desc {
   font-size: 0.9375rem;
-  color: var(--color-text-muted);
+  color: var(--gray, #6b6960);
   line-height: 1.6;
 }
 
 /* Who Section */
 .franchise-who {
   padding: var(--space-20) 0;
-  background: var(--color-navy);
+  background: var(--sidebar, #111110);
+  border-top: 1px solid var(--sidebar-border, #232321);
+  border-bottom: 1px solid var(--sidebar-border, #232321);
 }
 
 .franchise-who__grid {
@@ -103,13 +109,14 @@
 }
 
 .franchise-who__card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
 }
 
 .franchise-who__card-title {
+  font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 700;
   color: var(--color-white);
@@ -118,43 +125,45 @@
 
 .franchise-who__card-desc {
   font-size: 0.9rem;
-  color: var(--color-gray-400);
+  color: #888780;
   line-height: 1.6;
 }
 
 /* Terms Note */
 .franchise-terms {
   padding: var(--space-16) 0;
-  background: var(--color-white);
+  background: var(--bg, #f4f3ef);
 }
 
 .franchise-terms__inner {
   max-width: 640px;
   margin: 0 auto;
   text-align: center;
-  background: var(--color-gray-50);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-2xl);
+  background: var(--color-white);
+  border: 1px solid var(--border, #d9d8d3);
+  border-radius: var(--radius-xl);
   padding: var(--space-10);
+  box-shadow: 0 1px 4px rgba(26, 26, 24, 0.04);
 }
 
 .franchise-terms__icon {
   display: flex;
   justify-content: center;
-  color: var(--color-gray-400);
+  color: var(--green, #1a9b6c);
   margin-bottom: var(--space-5);
 }
 
 .franchise-terms__inner h2 {
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--ink, #1a1a18);
   margin-bottom: var(--space-4);
 }
 
 .franchise-terms__inner p {
   font-size: 1rem;
-  color: var(--color-text-muted);
+  color: var(--gray, #6b6960);
   margin-bottom: var(--space-8);
   line-height: 1.7;
 }

@@ -7,43 +7,64 @@
    ============================================================ */
 
 :root {
-  /* SmartPrinter Official Reference Design System */
-  --smart-navy:        #0B132B;
-  --smart-navy-light:  #1C2541;
-  --smart-navy-dark:   #060B18;
-  --smart-orange:      #FF5E00;
-  --smart-orange-hover:#E05300;
-  --smart-orange-light:#FFF2EB;
-  --smart-teal:        #00C4B4;
-  --smart-teal-hover:  #00A89A;
-  --smart-teal-light:  #E6F9F7;
-  --smart-mint:        #E8F7F5;
-  --smart-cream:       #FFF8F0;
-  --smart-bg:          #F8FAFC;
-  --smart-card:        #FFFFFF;
-  --smart-border:      #E2E8F0;
+  /* Official SmartPrinter Investor Portal Reference Design System */
+  --ink:               #1a1a18;
+  --ink-2:             #2e2e2a;
+  --bg:                #f4f3ef;
+  --white:             #ffffff;
+  --card:              #ffffff;
+  --border:            #d9d8d3;
+  --border-2:          #c4c3bd;
+  --gray:              #6b6960;
+  --gray-l:            #edecea;
+  --green:             #1a9b6c;
+  --green-d:           #127a54;
+  --green-l:           #e6f5ef;
+  --green-ll:          #f0faf5;
+  --amber:             #e8891a;
+  --amber-l:           #fdf3e3;
+  --red:               #d94040;
+  --red-l:             #fdeaea;
+  --sidebar:           #111110;
+  --sidebar-border:    #232321;
+
+  /* Aliases mapped to Investor Portal tokens */
+  --smart-navy:        var(--ink);
+  --smart-navy-light:  var(--ink-2);
+  --smart-navy-dark:   var(--sidebar);
+  --smart-orange:      var(--amber);
+  --smart-orange-hover:#cc7410;
+  --smart-orange-light:var(--amber-l);
+  --smart-teal:        var(--green);
+  --smart-teal-hover:  var(--green-d);
+  --smart-teal-light:  var(--green-l);
+  --smart-mint:        var(--green-ll);
+  --smart-cream:       var(--bg);
+  --smart-bg:          var(--bg);
+  --smart-card:        var(--card);
+  --smart-border:      var(--border);
 
   /* Backward Compatibility Tokens */
-  --color-navy:        var(--smart-navy);
-  --color-navy-800:    var(--smart-navy-light);
-  --color-navy-700:    #16233b;
-  --color-blue:        var(--smart-teal);
-  --color-blue-600:    var(--smart-teal-hover);
-  --color-blue-soft:   var(--smart-teal-light);
-  --color-white:       #FFFFFF;
-  --color-gray-50:     var(--smart-bg);
-  --color-gray-100:    #F1F5F9;
-  --color-gray-200:    var(--smart-border);
-  --color-gray-300:    #CBD5E1;
-  --color-gray-400:    #94A3B8;
-  --color-gray-500:    #64748B;
-  --color-gray-600:    #475569;
-  --color-text:        #0F172A;
-  --color-text-muted:  #475569;
+  --color-navy:        var(--ink);
+  --color-navy-800:    var(--ink-2);
+  --color-navy-700:    #222220;
+  --color-blue:        var(--green);
+  --color-blue-600:    var(--green-d);
+  --color-blue-soft:   var(--green-l);
+  --color-white:       #ffffff;
+  --color-gray-50:     var(--bg);
+  --color-gray-100:    var(--gray-l);
+  --color-gray-200:    var(--border);
+  --color-gray-300:    var(--border-2);
+  --color-gray-400:    #888780;
+  --color-gray-500:    var(--gray);
+  --color-gray-600:    #4a4944;
+  --color-text:        var(--ink);
+  --color-text-muted:  var(--gray);
 
   /* Typography */
   --font-primary:   'Inter', system-ui, -apple-system, sans-serif;
-  --font-display:   'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display:   'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Spacing */
   --space-1:  0.25rem;
@@ -63,18 +84,18 @@
   /* Radius */
   --radius-sm:  8px;
   --radius-md:  12px;
-  --radius-lg:  18px;
-  --radius-xl:  24px;
-  --radius-2xl: 32px;
+  --radius-lg:  16px;
+  --radius-xl:  20px;
+  --radius-2xl: 28px;
   --radius-full: 9999px;
 
-  /* Shadows - Premium Soft */
-  --shadow-sm: 0 2px 4px rgba(11, 19, 43, 0.03);
-  --shadow-md: 0 8px 16px -4px rgba(11, 19, 43, 0.06), 0 2px 6px -2px rgba(11, 19, 43, 0.04);
-  --shadow-lg: 0 16px 32px -6px rgba(11, 19, 43, 0.08), 0 6px 12px -4px rgba(11, 19, 43, 0.04);
-  --shadow-xl: 0 28px 56px -12px rgba(11, 19, 43, 0.14);
-  --shadow-teal: 0 10px 25px -5px rgba(0, 196, 180, 0.35);
-  --shadow-orange: 0 10px 25px -5px rgba(255, 94, 0, 0.35);
+  /* Shadows - Investor Portal Style */
+  --shadow-sm: 0 1px 3px rgba(26, 26, 24, 0.05);
+  --shadow-md: 0 4px 12px rgba(26, 26, 24, 0.06), 0 1px 3px rgba(26, 26, 24, 0.04);
+  --shadow-lg: 0 12px 28px rgba(26, 26, 24, 0.08), 0 4px 10px rgba(26, 26, 24, 0.04);
+  --shadow-xl: 0 24px 48px -8px rgba(26, 26, 24, 0.12);
+  --shadow-teal: 0 8px 24px -4px rgba(26, 155, 108, 0.35);
+  --shadow-orange: 0 8px 24px -4px rgba(232, 137, 26, 0.35);
 
   /* Transitions */
   --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -96,7 +117,7 @@ html {
 body {
   font-family: var(--font-primary);
   color: var(--color-text);
-  background-color: var(--color-white);
+  background-color: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -121,10 +142,15 @@ h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-h1 { font-size: clamp(2rem, 5.5vw, 4.5rem); font-weight: 800; }
-h2 { font-size: clamp(1.75rem, 3.8vw, 3rem); font-weight: 800; }
-h3 { font-size: clamp(1.15rem, 2vw, 1.75rem); }
-p  { color: var(--color-text-muted); font-size: 1.0625rem; word-break: break-word; overflow-wrap: break-word; }
+h1 { font-size: clamp(2rem, 5.5vw, 4.5rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.08; }
+h2 { font-size: clamp(1.75rem, 3.8vw, 3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; }
+h3 { font-size: clamp(1.15rem, 2vw, 1.75rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; }
+h4 { font-size: clamp(1rem, 1.5vw, 1.35rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; }
+p  { font-family: var(--font-primary); color: var(--color-text-muted); font-size: 1rem; line-height: 1.65; word-break: break-word; overflow-wrap: break-word; }
+
+input, button, select, textarea {
+  font-family: inherit;
+}
 
 .container {
   width: 100%;
@@ -149,22 +175,22 @@ p  { color: var(--color-text-muted); font-size: 1.0625rem; word-break: break-wor
 }
 
 .section { padding: var(--space-24) 0; }
-.section--dark { background-color: var(--color-navy); color: var(--color-white); }
+.section--dark { background-color: var(--sidebar); color: var(--color-white); }
 .section--dark h1, .section--dark h2, .section--dark h3 { color: var(--color-white); }
-.section--dark p { color: var(--color-gray-400); }
-.section--soft { background-color: var(--color-gray-50); }
+.section--dark p { color: #888780; }
+.section--soft { background-color: var(--bg); }
 
 .section-label {
   display: inline-block;
-  font-family: var(--font-primary);
+  font-family: var(--font-display);
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-blue);
+  color: var(--green-d);
   margin-bottom: var(--space-4);
 }
-.section-label--white { color: var(--color-blue-soft); }
+.section-label--white { color: #4ade80; }
 
 .section-header {
   text-align: center;

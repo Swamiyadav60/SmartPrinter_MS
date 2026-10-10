@@ -1,7 +1,7 @@
 /* ── Contact Page ── */
 .contact-page {
   padding: var(--space-20) 0;
-  background: linear-gradient(to bottom, var(--color-gray-50), var(--color-white));
+  background: var(--bg, #f4f3ef);
   min-height: calc(100vh - 68px);
 }
 
@@ -17,7 +17,7 @@
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  color: var(--color-navy);
+  color: var(--ink, #1a1a18);
   margin-bottom: var(--space-4);
   margin-top: var(--space-3);
   line-height: 1.15;
@@ -25,7 +25,7 @@
 
 .contact-page__desc {
   font-size: 1.125rem;
-  color: var(--color-gray-600);
+  color: var(--gray, #6b6960);
   line-height: 1.7;
   margin-bottom: var(--space-10);
 }
@@ -45,12 +45,12 @@
 .contact-page__method-icon {
   width: 48px;
   height: 48px;
-  background: var(--color-blue-soft);
+  background: var(--green-l, #e6f5ef);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-blue);
+  color: var(--green, #1a9b6c);
   flex-shrink: 0;
 }
 
@@ -61,29 +61,31 @@
 
 .contact-page__method strong {
   display: block;
+  font-family: var(--font-display);
   font-size: 1rem;
-  color: var(--color-navy);
+  color: var(--ink, #1a1a18);
   margin-bottom: 2px;
 }
 
 .contact-page__method span {
   font-size: 0.9375rem;
-  color: var(--color-text-muted);
+  color: var(--gray, #6b6960);
 }
 
 /* Right Form */
 .contact-page__form-wrap {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-2xl);
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #d9d8d3);
+  border-radius: var(--radius-xl);
   padding: var(--space-10);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 4px 20px -4px rgba(26, 26, 24, 0.08);
 }
 
 .contact-page__form-title {
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--ink, #1a1a18);
   margin-bottom: var(--space-6);
 }
 
@@ -102,9 +104,10 @@
 }
 
 .form-group label {
+  font-family: var(--font-display);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-navy-800);
+  color: var(--ink, #1a1a18);
 }
 
 .form-group input,
@@ -112,12 +115,12 @@
 .form-group textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: var(--color-gray-50);
-  border: 1px solid var(--color-gray-200);
+  background: var(--bg, #f4f3ef);
+  border: 1px solid var(--border, #d9d8d3);
   border-radius: var(--radius-md);
   font-family: inherit;
   font-size: 0.9375rem;
-  color: var(--color-text);
+  color: var(--ink, #1a1a18);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -125,9 +128,9 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-blue);
-  box-shadow: 0 0 0 3px var(--color-blue-soft2);
-  background: var(--color-white);
+  border-color: var(--green, #1a9b6c);
+  box-shadow: 0 0 0 3px rgba(26, 155, 108, 0.15);
+  background: var(--white, #ffffff);
 }
 
 .form-group textarea {

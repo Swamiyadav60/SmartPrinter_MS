@@ -1,7 +1,8 @@
 /* ── Footer ── */
 .footer {
-  background-color: var(--smart-navy, #0B132B);
+  background-color: var(--sidebar, #111110);
   color: var(--color-white);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer__top {
@@ -12,46 +13,29 @@
   padding-bottom: var(--space-16);
 }
 
-/* Logo */
+/* Logo (Clean text branding) */
 .footer__logo {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2);
   margin-bottom: var(--space-4);
   text-decoration: none;
 }
 
-.footer__logo-icon {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.footer__logo-img {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  object-fit: contain;
-  background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  display: block;
-}
-
 .footer__logo-text {
   font-family: var(--font-display);
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--color-white);
   letter-spacing: -0.03em;
 }
 
 .footer__logo-accent {
-  color: var(--smart-orange, #FF5E00);
+  color: var(--green, #1a9b6c);
 }
 
 .footer__tagline {
-  color: #94A3B8;
+  color: #888780;
   font-size: 0.9375rem;
   line-height: 1.6;
   margin-bottom: var(--space-6);
@@ -60,12 +44,12 @@
 
 /* Columns */
 .footer__col-title {
-  font-family: var(--font-primary);
+  font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--smart-teal, #00C4B4);
+  color: var(--green, #1a9b6c);
   margin-bottom: var(--space-5);
 }
 
@@ -77,13 +61,13 @@
 
 .footer__link {
   font-size: 0.9375rem;
-  color: #CBD5E1;
+  color: #888780;
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .footer__link:hover {
-  color: var(--smart-teal, #00C4B4);
+  color: #ffffff;
 }
 
 .footer__links--contact li {
@@ -94,7 +78,7 @@
 
 .footer__contact-label {
   font-size: 0.75rem;
-  color: var(--color-gray-400);
+  color: #55544e;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -103,12 +87,12 @@
 .footer__links--contact .footer__link,
 .footer__links--contact span:last-child {
   font-size: 0.9375rem;
-  color: var(--color-gray-300);
+  color: #888780;
 }
 
 /* Bottom Bar */
 .footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer__bottom-inner {
@@ -121,12 +105,12 @@
 
 .footer__copy {
   font-size: 0.875rem;
-  color: var(--color-gray-400);
+  color: #55544e;
 }
 
 .footer__legal {
   font-size: 0.875rem;
-  color: var(--color-gray-400);
+  color: #55544e;
 }
 
 /* Responsive */

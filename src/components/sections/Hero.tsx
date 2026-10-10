@@ -9,15 +9,16 @@ const Hero: React.FC = () => {
 
   return (
     <section className="hero" ref={ref} aria-labelledby="hero-headline">
-      {/* Background Soft Glow Gradients */}
-      <div className="hero__bg-glow hero__bg-glow--mint" aria-hidden="true" />
-      <div className="hero__bg-glow hero__bg-glow--cream" aria-hidden="true" />
+      {/* Background Ambient Glow & Grid */}
+      <div className="hero__grid-pattern" aria-hidden="true" />
+      <div className="hero__bg-glow hero__bg-glow--green" aria-hidden="true" />
+      <div className="hero__bg-glow hero__bg-glow--amber" aria-hidden="true" />
 
       <div className="container hero__container">
         {/* Left Side — Typography & CTAs */}
         <div className="hero__content">
           <div className="hero__badge reveal">
-            <span className="hero__badge-icon">⚡</span>
+            <span className="hero__badge-dot" aria-hidden="true" />
             <span className="hero__badge-text">India's #1 Self-Service Printing Network</span>
           </div>
 
@@ -31,10 +32,10 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="hero__ctas reveal reveal-delay-3">
-            <Button href="https://app.smartprinter.in" variant="accent" size="lg" id="hero-print-now">
+            <Button href="https://app.smartprinter.in" variant="primary" size="lg" id="hero-print-now">
               Print Document Now ↗
             </Button>
-            <Button to="/contact" variant="primary" size="lg" id="hero-partner-with-us">
+            <Button to="/contact" variant="secondary" size="lg" id="hero-partner-with-us">
               Partner With Us
             </Button>
           </div>
@@ -42,17 +43,17 @@ const Hero: React.FC = () => {
           {/* Quick Metrics Bar */}
           <div className="hero__metrics reveal reveal-delay-3">
             <div className="hero__metric-item">
-              <span className="hero__metric-val text-smart-teal">24 / 7</span>
+              <span className="hero__metric-val hero__metric-val--green">24 / 7</span>
               <span className="hero__metric-lbl">Kiosk Uptime</span>
             </div>
             <div className="hero__metric-divider" />
             <div className="hero__metric-item">
-              <span className="hero__metric-val text-smart-orange">100%</span>
+              <span className="hero__metric-val hero__metric-val--amber">100%</span>
               <span className="hero__metric-lbl">Cashless UPI</span>
             </div>
             <div className="hero__metric-divider" />
             <div className="hero__metric-item">
-              <span className="hero__metric-val text-smart-navy">0 Sec</span>
+              <span className="hero__metric-val hero__metric-val--dark">0 Sec</span>
               <span className="hero__metric-lbl">File Retention</span>
             </div>
           </div>

@@ -9,17 +9,17 @@
 .printgo-nav-wrapper {
   /* Semantic aliases used throughout this file */
   --sp-bg:          var(--color-white, #ffffff);
-  --sp-bg-blur:     rgba(255, 255, 255, 0.92);
-  --sp-bg-scrolled: rgba(255, 255, 255, 0.98);
-  --sp-border:      var(--smart-border, #e2e8f0);
-  --sp-text:        var(--smart-navy, #0b132b);
-  --sp-text-muted:  var(--color-gray-600, #475569);
-  --sp-accent:      var(--smart-orange, #ff5e00);
-  --sp-teal:        var(--smart-teal, #00c4b4);
-  --sp-accent-soft: var(--smart-teal-light, #e6f9f7);
-  --sp-shadow-card: 0 8px 32px -8px rgba(11, 19, 43, 0.12), 0 2px 8px -4px rgba(11, 19, 43, 0.06);
-  --sp-shadow-scrolled: 0 4px 16px rgba(11, 19, 43, 0.08);
-  --sp-radius-card: var(--radius-2xl, 32px);
+  --sp-bg-blur:     rgba(244, 243, 239, 0.88);
+  --sp-bg-scrolled: rgba(255, 255, 255, 0.96);
+  --sp-border:      var(--border, #d9d8d3);
+  --sp-text:        var(--ink, #1a1a18);
+  --sp-text-muted:  var(--gray, #6b6960);
+  --sp-accent:      var(--green, #1a9b6c);
+  --sp-teal:        var(--green, #1a9b6c);
+  --sp-accent-soft: var(--green-l, #e6f5ef);
+  --sp-shadow-card: 0 4px 20px -4px rgba(26, 26, 24, 0.08), 0 1px 4px rgba(26, 26, 24, 0.04);
+  --sp-shadow-scrolled: 0 4px 16px rgba(26, 26, 24, 0.08);
+  --sp-radius-card: 16px;
   --sp-radius-pill: var(--radius-full, 9999px);
 }
 
@@ -84,42 +84,18 @@
   gap: 8px;
 }
 
-/* ── Logo ────────────────────────────────────────────────────── */
+/* ── Logo (Clean text branding) ─────────────────────────────── */
 .spnav__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.spnav__logo-icon {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.spnav__logo-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  object-fit: contain;
-  background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  flex-shrink: 0;
-  display: block;
-}
-
-.spnav__logo:hover .spnav__logo-img {
-  transform: scale(1.05);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
-}
-
 .spnav__logo-text {
-  font-family: var(--font-display, "Manrope", system-ui, sans-serif);
-  font-size: 1.125rem;
+  font-family: var(--font-display, "Space Grotesk", system-ui, sans-serif);
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--sp-text);
   letter-spacing: -0.03em;
@@ -163,12 +139,12 @@
 
 .spnav__link:hover {
   color: var(--sp-text);
-  background-color: var(--color-gray-100, #f1f5f9);
+  background-color: var(--gray-l, #edecea);
 }
 
-/* Active pill — filled with soft blue */
+/* Active pill — filled with soft green */
 .spnav__link--active {
-  color: var(--sp-accent);
+  color: var(--green-d, #127a54);
   background-color: var(--sp-accent-soft);
   font-weight: 600;
 }
@@ -251,11 +227,11 @@
 
 .spnav__drawer-link:hover {
   color: var(--sp-text);
-  background-color: var(--color-gray-100, #f1f5f9);
+  background-color: var(--gray-l, #edecea);
 }
 
 .spnav__drawer-link--active {
-  color: var(--sp-accent);
+  color: var(--green-d, #127a54);
   background-color: var(--sp-accent-soft);
   font-weight: 600;
 }
@@ -327,14 +303,8 @@
     padding: 0 12px;
   }
 
-  .spnav__logo-img {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-  }
-
   .spnav__logo-text {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .spnav__drawer-links {
@@ -351,13 +321,7 @@
     padding: 0 8px;
   }
 
-  .spnav__logo-img {
-    width: 30px;
-    height: 30px;
-    border-radius: 7px;
-  }
-
   .spnav__logo-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }

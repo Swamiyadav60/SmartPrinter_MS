@@ -1,11 +1,13 @@
 /* ── Shared Page Styles ── */
 .page-hero {
   padding: var(--space-20) 0 var(--space-16);
-  background-color: var(--color-navy);
+  background-color: var(--sidebar, #111110);
+  border-bottom: 1px solid var(--sidebar-border, #232321);
 }
 
 .page-hero--soft {
-  background: linear-gradient(160deg, #f8fafc 0%, var(--color-blue-soft) 100%);
+  background: var(--bg, #f4f3ef);
+  border-bottom: 1px solid var(--border, #d9d8d3);
 }
 
 .page-hero__content {
@@ -16,7 +18,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.85rem, 4.5vw, 3rem);
   font-weight: 800;
-  color: var(--color-navy);
+  color: var(--ink, #1a1a18);
   margin-bottom: var(--space-5);
   margin-top: var(--space-3);
   word-break: break-word;
@@ -29,25 +31,27 @@
 
 .page-hero__sub {
   font-size: 1.0625rem;
-  color: var(--color-gray-600);
+  color: var(--gray, #6b6960);
   line-height: 1.75;
 }
 
 .page-hero__sub--muted {
-  color: var(--color-gray-400);
+  color: #888780;
 }
 
 /* ── How It Works Detail ── */
 .hiw-detail {
   padding: var(--space-16) 0;
-  background: var(--color-gray-50);
+  background: var(--bg, #f4f3ef);
+  border-top: 1px solid var(--border, #d9d8d3);
 }
 
 .hiw-detail__inner h2 {
+  font-family: var(--font-display);
   margin-bottom: var(--space-8);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--ink, #1a1a18);
 }
 
 .hiw-detail__grid {
@@ -57,22 +61,24 @@
 }
 
 .hiw-detail__card {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-xl);
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #d9d8d3);
+  border-radius: var(--radius-lg);
   padding: var(--space-6);
+  box-shadow: 0 1px 3px rgba(26, 26, 24, 0.04);
 }
 
 .hiw-detail__card h3 {
+  font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--ink, #1a1a18);
   margin-bottom: var(--space-3);
 }
 
 .hiw-detail__card p {
   font-size: 0.9375rem;
-  color: var(--color-text-muted);
+  color: var(--gray, #6b6960);
   line-height: 1.65;
 }
 

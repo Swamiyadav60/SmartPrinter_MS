@@ -1,8 +1,9 @@
-.franchise-teaser { padding: var(--space-24) 0; background: var(--color-white); }
+.franchise-teaser { padding: var(--space-24) 0; background: var(--bg, #f4f3ef); }
 
 .franchise-teaser__inner {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-700) 100%);
-  border-radius: var(--radius-2xl);
+  background: var(--sidebar, #111110);
+  border: 1px solid var(--sidebar-border, #232321);
+  border-radius: var(--radius-xl);
   padding: var(--space-16);
   position: relative;
   overflow: hidden;
@@ -15,7 +16,7 @@
   right: 0;
   width: 60%;
   height: 100%;
-  background: radial-gradient(circle at center right, rgba(37,99,235,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at center right, rgba(26, 155, 108, 0.16) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -25,8 +26,8 @@
   max-width: 540px;
 }
 
-.franchise-teaser__content h2 { color: var(--color-white); margin-bottom: var(--space-4); }
-.franchise-teaser__content p { color: var(--color-gray-300); margin-bottom: var(--space-8); font-size: 1.125rem; }
+.franchise-teaser__content h2 { color: var(--color-white); font-family: var(--font-display); margin-bottom: var(--space-4); }
+.franchise-teaser__content p { color: #888780; margin-bottom: var(--space-8); font-size: 1.125rem; }
 
 .franchise-teaser__list {
   list-style: none;

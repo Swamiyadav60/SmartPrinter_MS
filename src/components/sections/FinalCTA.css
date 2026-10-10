@@ -1,9 +1,9 @@
 /* ── Final CTA ── */
 .final-cta {
   padding: var(--space-24) 0;
-  background: linear-gradient(135deg, rgba(232, 247, 245, 0.6) 0%, rgba(255, 248, 240, 0.6) 100%);
+  background: var(--bg, #f4f3ef);
   text-align: center;
-  border-top: 1px solid var(--smart-border, #E2E8F0);
+  border-top: 1px solid var(--border, #d9d8d3);
 }
 
 .final-cta__inner {
@@ -14,15 +14,15 @@
 .final-cta__headline {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 900;
-  color: var(--smart-navy, #0B132B);
+  font-weight: 800;
+  color: var(--ink, #1a1a18);
   margin-bottom: var(--space-5);
   letter-spacing: -0.03em;
 }
 
 .final-cta__sub {
   font-size: 1.0625rem;
-  color: #475569;
+  color: var(--gray, #6b6960);
   line-height: 1.7;
   margin-bottom: var(--space-10);
 }
@@ -35,12 +35,12 @@
 }
 
 .final-cta__buttons .btn--ghost {
-  color: var(--smart-teal, #00C4B4);
-  border-color: var(--smart-teal, #00C4B4);
+  color: var(--green-d, #127a54);
+  border-color: var(--green, #1a9b6c);
 }
 
 .final-cta__buttons .btn--ghost:hover {
-  background-color: var(--smart-teal, #00C4B4);
+  background-color: var(--green, #1a9b6c);
   color: var(--color-white);
 }
 

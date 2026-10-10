@@ -1,7 +1,9 @@
 /* ── Vision ── */
 .vision {
   padding: var(--space-24) 0;
-  background: linear-gradient(135deg, #111827 0%, #0B1220 100%);
+  background: var(--sidebar, #111110);
+  border-top: 1px solid var(--sidebar-border, #232321);
+  border-bottom: 1px solid var(--sidebar-border, #232321);
   text-align: center;
 }
 
@@ -21,14 +23,12 @@
 }
 
 .vision__headline-accent {
-  /* --color-blue-light was undefined; use --color-blue-soft (#EFF6FF) which is
-     readable against the dark navy/near-black gradient background */
-  color: var(--color-blue-soft);
+  color: var(--green, #1a9b6c);
 }
 
 .vision__sub {
   font-size: 1.0625rem;
-  color: var(--color-gray-400);
+  color: #888780;
   line-height: 1.75;
   max-width: 620px;
   margin: 0 auto var(--space-10);

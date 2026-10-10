@@ -1,7 +1,7 @@
 /* ── Problem ── */
 .problem {
   padding: var(--space-24) 0;
-  background-color: var(--color-gray-50);
+  background-color: var(--bg, #f4f3ef);
 }
 
 .problem__grid {
@@ -11,23 +11,24 @@
 }
 
 .problem__card {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-xl);
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #d9d8d3);
+  border-radius: var(--radius-lg);
   padding: var(--space-8);
+  box-shadow: 0 1px 3px rgba(26, 26, 24, 0.04);
   transition: box-shadow var(--transition-normal), transform var(--transition-normal), border-color var(--transition-normal);
 }
 
 .problem__card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 24px rgba(26, 26, 24, 0.08);
   transform: translateY(-2px);
-  border-color: var(--color-gray-300);
+  border-color: var(--green, #1a9b6c);
 }
 
 .problem__icon {
   width: 44px;
   height: 44px;
-  color: var(--color-blue);
+  color: var(--green, #1a9b6c);
   margin-bottom: var(--space-5);
 }
 
@@ -37,15 +38,16 @@
 }
 
 .problem__card-title {
+  font-family: var(--font-display);
   font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--ink, #1a1a18);
   margin-bottom: var(--space-3);
 }
 
 .problem__card-desc {
   font-size: 0.9375rem;
-  color: var(--color-text-muted);
+  color: var(--gray, #6b6960);
   line-height: 1.65;
 }
 

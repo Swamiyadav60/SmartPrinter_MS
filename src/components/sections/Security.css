@@ -1,6 +1,6 @@
 .security {
   padding: var(--space-24) 0;
-  background-color: var(--smart-navy, #0B132B);
+  background-color: var(--sidebar, #111110);
   color: var(--color-white);
 }
 
@@ -15,46 +15,46 @@
 
 .security__main {
   grid-column: 1 / -1;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(0, 196, 180, 0.2);
-  border-radius: var(--radius-2xl);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(26, 155, 108, 0.25);
+  border-radius: var(--radius-xl);
   padding: var(--space-12);
   text-align: center;
 }
 
-.security__main h2 { color: var(--color-white); margin-bottom: var(--space-4); }
-.security__main p { color: #CBD5E1; max-width: 600px; margin: 0 auto; font-size: 1.125rem; }
+.security__main h2 { color: var(--color-white); margin-bottom: var(--space-4); font-family: var(--font-display); }
+.security__main p { color: #888780; max-width: 600px; margin: 0 auto; font-size: 1.125rem; }
 
 .security__bento {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-2xl);
+  border-radius: var(--radius-xl);
   padding: var(--space-8);
   transition: transform var(--transition-normal), background-color var(--transition-normal), border-color var(--transition-normal);
 }
 
 .security__bento:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: var(--smart-teal, #00C4B4);
+  background: rgba(26, 155, 108, 0.06);
+  border-color: var(--green, #1a9b6c);
   transform: translateY(-4px);
 }
 
 .bento-icon {
   width: 48px;
   height: 48px;
-  background: rgba(0, 196, 180, 0.15);
-  border-radius: var(--radius-lg);
+  background: rgba(26, 155, 108, 0.15);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--smart-teal, #00C4B4);
+  color: var(--green, #1a9b6c);
   margin-bottom: var(--space-6);
 }
 
 .bento-icon svg { width: 24px; height: 24px; }
 
-.security__bento h3 { color: var(--color-white); font-size: 1.25rem; font-weight: 800; margin-bottom: var(--space-3); }
-.security__bento p { color: #CBD5E1; font-size: 1rem; line-height: 1.6; }
+.security__bento h3 { color: var(--color-white); font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: var(--space-3); }
+.security__bento p { color: #888780; font-size: 1rem; line-height: 1.6; }
 
 @media (max-width: 1023px) {
   .security__grid {

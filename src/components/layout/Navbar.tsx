@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Button from '../ui/Button';
-import smartPrinterLogo from '../../assets/PrintGo_logo.jpeg';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
@@ -37,13 +36,6 @@ const Navbar: React.FC = () => {
       <div className="navbar__inner container">
         {/* Logo */}
         <Link to="/" className="navbar__logo" aria-label="SmartPrinter — Home">
-          <span className="navbar__logo-icon" aria-hidden="true">
-            <img
-              src={smartPrinterLogo}
-              alt="SmartPrinter"
-              className="navbar__logo-img"
-            />
-          </span>
           <span className="navbar__logo-text">Smart<span className="navbar__logo-accent">Printer</span></span>
         </Link>
 
