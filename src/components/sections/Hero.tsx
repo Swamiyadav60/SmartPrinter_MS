@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../ui/Button';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
-import heroImg from '../../assets/hero.png';
+import heroImage from '../../assets/hero.png';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -59,71 +59,32 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Side — Device & Kiosk Presentation Mockup */}
-        <div className="hero__visual reveal reveal-delay-2">
-          <div className="hero__device-frame">
-
-            {/* Kiosk App Header */}
-            <div className="hero__device-header">
-              <div className="hero__device-brand">
-                <span className="hero__device-dot hero__device-dot--teal" />
-                <span className="hero__device-title">SmartPrinter Kiosk v3.2</span>
-              </div>
-              <span className="hero__device-badge">● LIVE NETWORK</span>
+        {/* Right Side Visual — Kiosk & Floating Stat Cards */}
+        <div className="hero-image-wrap fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="hero-image-bg" />
+          <div className="hero-image-gradient" />
+          <div className="hero-floating-card card-1 float-anim">
+            <div className="fc-icon">⚡</div>
+            <div className="fc-text">
+              <div className="fc-val">₹40,000</div>
+              <div className="fc-lbl">per kiosk</div>
             </div>
-
-            {/* Kiosk Screen UI Display */}
-            <div className="hero__device-screen">
-
-              {/* Main Image or Interactive Graphics */}
-              <div className="hero__screen-preview">
-                <img 
-                  src={heroImg} 
-                  alt="SmartPrinter Automated Kiosk" 
-                  className="hero__screen-img" 
-                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                />
-
-                {/* QR Instant Print Card Overlay */}
-                <div className="hero__qr-card">
-                  <div className="hero__qr-code">
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="2" y="2" width="8" height="8" rx="2" fill="#0B132B"/>
-                      <rect x="4" y="4" width="4" height="4" fill="#00C4B4"/>
-                      <rect x="14" y="2" width="8" height="8" rx="2" fill="#0B132B"/>
-                      <rect x="16" y="4" width="4" height="4" fill="#FF5E00"/>
-                      <rect x="2" y="14" width="8" height="8" rx="2" fill="#0B132B"/>
-                      <rect x="4" y="16" width="4" height="4" fill="#00C4B4"/>
-                      <rect x="14" y="14" width="4" height="4" fill="#0B132B"/>
-                      <rect x="18" y="18" width="4" height="4" fill="#FF5E00"/>
-                      <rect x="14" y="18" width="4" height="4" fill="#00C4B4"/>
-                    </svg>
-                  </div>
-                  <div className="hero__qr-text">
-                    <p className="hero__qr-title">Scan QR to Print</p>
-                    <p className="hero__qr-sub">No app download required</p>
-                  </div>
-                </div>
-
-                {/* Status Float Badge */}
-                <div className="hero__status-float">
-                  <span className="hero__status-icon">🖨️</span>
-                  <div>
-                    <p className="hero__status-title">High Speed Printing</p>
-                    <p className="hero__status-sub">B&W & Color Laser Output</p>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* Hardware Tray Preview */}
-            <div className="hero__device-footer">
-              <span className="hero__slot-indicator">⚡ Instant Cashless Dispense Tray</span>
-            </div>
-
           </div>
+          <div className="hero-floating-card card-2 float-anim-delayed">
+            <div className="fc-icon">📈</div>
+            <div className="fc-text">
+              <div className="fc-val">100%</div>
+              <div className="fc-lbl">Passive — We Handle All</div>
+            </div>
+          </div>
+          <div className="hero-floating-card card-3 float-anim">
+            <div className="fc-icon">🏆</div>
+            <div className="fc-text">
+              <div className="fc-val">8 months</div>
+              <div className="fc-lbl">Avg. Payback Period</div>
+            </div>
+          </div>
+          <img src={heroImage} alt="Smart Printer Smart Kiosk" className="hero-image" />
         </div>
 
       </div>
