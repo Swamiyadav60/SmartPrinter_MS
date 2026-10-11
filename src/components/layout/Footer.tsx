@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
             India's self-service printing kiosk network. Fast, private, always available.
           </p>
           <Button
-            href="https://app.smartprinter.in"
+            href="https://smartprinter.in"
             variant="ghost"
             size="sm"
             id="footer-print-now"
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <a
-                href="https://app.smartprinter.in"
+                href="https://smartprinter.in"
                 className="footer__link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -87,12 +87,12 @@ const Footer: React.FC = () => {
             <li>
               <span className="footer__contact-label">Printing App</span>
               <a
-                href="https://app.smartprinter.in"
+                href="https://smartprinter.in"
                 className="footer__link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                app.smartprinter.in
+                smartprinter.in
               </a>
             </li>
             <li>

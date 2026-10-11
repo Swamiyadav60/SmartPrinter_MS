@@ -48,7 +48,7 @@ const DEFAULT_NAV_LINKS: NavLinkItem[] = [
 ];
 
 const DEFAULT_CTA_LINKS: CtaItem[] = [
-  { label: "Print Now", href: "https://app.smartprinter.in", variant: "secondary" },
+  { label: "Print Now", href: "https://smartprinter.in", variant: "secondary" },
   { label: "Get a Quote", to: "/contact", variant: "primary" },
 ];
 

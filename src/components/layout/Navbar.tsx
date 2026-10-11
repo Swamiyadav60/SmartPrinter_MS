@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Actions */}
         <div className="navbar__actions">
           <Button
-            href="https://app.smartprinter.in"
+            href="https://smartprinter.in"
             variant="secondary"
             size="sm"
             id="nav-print-now"
@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
           </ul>
           <div className="navbar__mobile-actions">
             <Button
-              href="https://app.smartprinter.in"
+              href="https://smartprinter.in"
               variant="secondary"
               fullWidth
               id="mobile-print-now"

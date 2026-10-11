@@ -26,7 +26,7 @@ const FinalCTA: React.FC = () => {
             <Button to="/franchise" variant="secondary" size="lg" id="final-cta-franchise">
               Become a SmartPrinter Partner
             </Button>
-            <Button href="https://app.smartprinter.in" variant="ghost" size="lg" id="final-cta-print">
+            <Button href="https://smartprinter.in" variant="ghost" size="lg" id="final-cta-print">
               Print Now ↗
             </Button>
           </div>

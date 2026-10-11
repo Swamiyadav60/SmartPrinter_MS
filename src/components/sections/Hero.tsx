@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="hero__ctas reveal reveal-delay-3">
-            <Button href="https://app.smartprinter.in" variant="primary" size="lg" id="hero-print-now">
+            <Button href="https://smartprinter.in" variant="primary" size="lg" id="hero-print-now">
               Print Document Now ↗
             </Button>
             <Button to="/contact" variant="secondary" size="lg" id="hero-partner-with-us">
